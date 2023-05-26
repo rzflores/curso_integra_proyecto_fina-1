@@ -1,4 +1,6 @@
+const logger = require('../logger/logGenerator');
 const pool = require('../database/config')
+
 const UsuarioDocumentoNombreDTO = require('../DTO/UsuarioDocumentoNombreDTO')
 const UsuarioDocumentoDTO = require('../DTO/UsuarioDocumentoDTO')
 
@@ -26,7 +28,8 @@ class UsuarioDocumentoDao{
             }
             return lstUsuarioDocumento;
         } catch (error) {
-            console.log('UsuarioDocumentoDao |obtenerUsuarioDocumentosNombres| '+error);                 
+            console.log('UsuarioDocumentoDao |obtenerUsuarioDocumentosNombres| '+error);
+            logger.info('UsuarioDocumentoDao | obtenerUsuarioDocumentosNombres| ' + error);                 
         }
     }
 
@@ -52,7 +55,8 @@ class UsuarioDocumentoDao{
             return lstTrabajadorDocumentos;
                     
         } catch (error) {
-            console.log('UsuarioDocumentoDao |obtenerUsuarioDocumentos| '+error);       
+            console.log('UsuarioDocumentoDao |obtenerUsuarioDocumentos| '+error); 
+            logger.info('UsuarioDocumentoDao | obtenerUsuarioDocumentos| ' + error);                       
         }
     }
 
@@ -74,7 +78,8 @@ static  obtenerValorCargaDocumentos = async(idUsuario , tipo) => {
         return respuesta;
                 
     } catch (error) {
-        console.log('UsuarioDocumentoDao |obtenerValorCargaDocumentos| '+error);       
+        console.log('UsuarioDocumentoDao |obtenerValorCargaDocumentos| '+error);
+        logger.info('UsuarioDocumentoDao | obtenerValorCargaDocumentos| ' + error);                              
     }
 }
 
@@ -91,6 +96,7 @@ static actualizarCargaDocumento = async(idUsuario,idDocumento,nombreDocumentoWeb
         
     } catch (error) {
         console.log('UsuarioDocumentoDao |actualizarCargaDocumento| '+error);  
+        logger.info('UsuarioDocumentoDao | actualizarCargaDocumento| ' + error);   
     }
    
 
@@ -108,6 +114,7 @@ static actualizarNombreDocumento = async(idUsuario,idDocumento , nombreDoc)=>{
         
     } catch (error) {
         console.log('UsuarioDocumentoDao |guardarNombreDocumento| '+error);   
+        logger.info('UsuarioDocumentoDao | guardarNombreDocumento| ' + error);   
     }
 
 }

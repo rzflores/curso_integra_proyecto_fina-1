@@ -1,4 +1,6 @@
+const logger = require('../logger/logGenerator');
 const pool = require('../database/config')
+
 const MenuAvanceDTO = require('../DTO/MenuAvanceDTO')
 const SubMenuAvanceDTO = require('../DTO/SubMenuAvanceDTO')
 const ValorAvanceDTO = require('../DTO/ValorAvanceDTO')
@@ -29,7 +31,8 @@ class UsuarioAvanceDao{
             }
             return lstAvanceMenus;
         } catch (error) {
-            console.log('UsuarioAvanceDao |obtenerMenusAvance| '+error);                 
+            console.log('UsuarioAvanceDao |obtenerMenusAvance| '+error); 
+            logger.info('UsuarioAvanceDao | obtenerMenusAvance| ' + error);                                           
         }
     }
     static obtenerSubMenusAvance =async (idUsuario,idMenu) => {
@@ -54,7 +57,8 @@ class UsuarioAvanceDao{
             return lstAvanceSubMenu;
                     
         } catch (error) {
-            console.log('UsuarioAvanceDao |obtenerSubMenusAvance| '+error);            
+            console.log('UsuarioAvanceDao |obtenerSubMenusAvance| '+error);   
+            logger.info('UsuarioAvanceDao | obtenerSubMenusAvance| ' + error);            
         }
     }
 
@@ -73,7 +77,8 @@ class UsuarioAvanceDao{
 
             
         } catch (error) {
-            console.log('UsuarioAvanceDao |obtenerMenuHabilitado| '+error);            
+            console.log('UsuarioAvanceDao |obtenerMenuHabilitado| '+error); 
+            logger.info('UsuarioAvanceDao | obtenerMenuHabilitado| ' + error);                       
         }
     }
 
@@ -87,6 +92,7 @@ class UsuarioAvanceDao{
                     
         } catch (error) {
             console.log('UsuarioAvanceDao |actualizarVisitadoMenu| '+error); 
+            logger.info('UsuarioAvanceDao | actualizarVisitadoMenu| ' + error);          
         }
 
     }
@@ -143,6 +149,7 @@ class UsuarioAvanceDao{
         return (result.affectedRows == 1) ? true : false;
     } catch (error) {
         console.log('UsuarioAvanceDao |habilitarSiguienteMenu| '+error); 
+        logger.info('UsuarioAvanceDao | habilitarSiguienteMenu| ' + error);
     }
     }
 
@@ -153,13 +160,17 @@ class UsuarioAvanceDao{
             ' set u.valorAvance =(select  sum( me.pesoAvance)   from usuarios_avance  ua '+  
                         ' inner join menus me on me.idMenu = ua.idMenu ' +
                          'WHERE ua.idUsuario = ? and ua.esVisitado = 1) +'+ 
-                         '(select IFNULL(sum(ud.esCargado),0)*5 from usuarios_documento  ud where  ud.idUsuario = ?)'+
+                         '(select IFNULL(sum(ud.esCargado),0)*5 from usuarios_documento  ud where  ud.idUsuario = ?) +'+
+                         '(CASE WHEN u.esAceptoPoli = 1 THEN 1 ELSE 0 END)+' +
+                         '(CASE WHEN u.esAceptoPoli2 = 1 THEN 1 ELSE 0 END)+' +
+                         '(CASE WHEN u.esAceptoPoli3 = 1 THEN 1 ELSE 0 END)' +
             'where u.idUsuario = ?',[idUsuario,idUsuario,idUsuario])
     
             return (result.affectedRows == 1) ? true : false;
     
         } catch (error) {
             console.log('UsuarioAvanceDao |actualizarValorAvance| '+error); 
+            logger.info('UsuarioAvanceDao | actualizarValorAvance| ' + error);
         }
     }
 
@@ -186,6 +197,7 @@ class UsuarioAvanceDao{
     
         } catch (error) {
             console.log('UsuarioAvanceDao |obtenerValorAvance| '+error); 
+            logger.info('UsuarioAvanceDao | obtenerValorAvance| ' + error);
         }
     }
 }

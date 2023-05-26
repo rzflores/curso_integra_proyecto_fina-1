@@ -7,7 +7,7 @@ class UsuarioAvanceService{
     static async obtenerMenusAvance(idUsuario){
         try {
             const resultList = await  UsuarioAvance.obtenerMenusAvance(idUsuario);
-            if(resultList.length == 0) { throw new Error() } 
+            if(resultList.length == 0) { throw new Error("Error al obtener el menus de avance | "+resultList) } 
             return resultList
         } catch (error) {
             console.log("UsuarioAvanceService | obtenerMenusAvance | Error:" + error)
@@ -16,7 +16,7 @@ class UsuarioAvanceService{
     static async obtenerSubMenusAvance(idUsuario,idMenu){
         try {
             const resultList = await  UsuarioAvance.obtenerSubMenusAvance(idUsuario,idMenu);
-            if(resultList.length == 0) { throw new Error() } 
+            if(resultList.length == 0) { throw new Error("Error al obtener el submenus de avance | "+resultList) } 
             return resultList
         } catch (error) {
             console.log("UsuarioAvanceService | obtenerSubMenusAvance | Error:" + error)

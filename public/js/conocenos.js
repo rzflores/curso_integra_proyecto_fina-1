@@ -171,33 +171,33 @@ if(checkPoli3 != null)
 
 
 
-if(window.location.href == "http://localhost:8686/conocenos_4?MenuActual=7"){
-  if( (checkPoli.checked == false  
-    && checkPoli != null)
-    || (checkPoli2.checked == false  
-    && checkPoli2 != null)
-    || (checkPoli3.checked == false
-    && checkPoli3 != null))
-    {
-  console.log("check en falso");
-  const links = document.querySelectorAll('a');
+// if(window.location.href == "http://localhost:8686/conocenos_4?MenuActual=7"){
+//   if( (checkPoli.checked == false  
+//     && checkPoli != null)
+//     || (checkPoli2.checked == false  
+//     && checkPoli2 != null)
+//     || (checkPoli3.checked == false
+//     && checkPoli3 != null))
+//     {
+//   console.log("check en falso");
+//   const links = document.querySelectorAll('a');
 
-  Swal.fire({
-      title: 'Debe aceptar todas las políticas para seguir continuar.',      
-      icon: 'info', 
-      timer: 3000,
-      showConfirmButton: false,
-      allowEscapeKey: false,
-      allowOutsideClick: false
-    })    
+//   Swal.fire({
+//       title: 'Debe aceptar todas las políticas para seguir continuar.',      
+//       icon: 'info', 
+//       timer: 3000,
+//       showConfirmButton: false,
+//       allowEscapeKey: false,
+//       allowOutsideClick: false
+//     })    
   
-  // setTimeout(function() {      
-    links.forEach(link => {       
-      if (link.getAttribute('href') !== "/conocenos_4?MenuActual=7") {
-          link.setAttribute('href' ,  "/conocenos_4?MenuActual=7")
-       }
-      }
-    );
-    // }, 4000); 
-  }
-}      
+//   // setTimeout(function() {      
+//     links.forEach(link => {       
+//       if (link.getAttribute('href') !== "/conocenos_4?MenuActual=7") {
+//           link.setAttribute('href' ,  "/conocenos_4?MenuActual=7")
+//        }
+//       }
+//     );
+//     // }, 4000); 
+//   }
+// }      

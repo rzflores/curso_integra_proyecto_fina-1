@@ -201,7 +201,7 @@
                          <iframe src="../files_out/17_politica_anticorrupcion_corp.pdf" style="width:100%; height:500px;" frameborder="0" ></iframe>                                                   
                         </div>  
                         <p class="textRegular">Declaro que he leído, entendido y comprendido claramente y en su totalidad la Política Anticorrupción Corporativa y Política Anticorrupción de Sociedad Minera Cerro Verde SAA., al igual que, los alcances, responsabilidades y obligaciones contenidas en ambos documentos.</p>                        
-                         <% if (usuario.esAceptoPoli == 1) 
+                         <% if (conocenosVM.usuario.esAceptoPoli == 1) 
                             {%>   
                              <input class="form-check-input" type="checkbox" value="" id="checkAceptoPoli" checked>
                             <% } else { %>
@@ -218,7 +218,7 @@
                             <iframe src="../files_out/18_politica_anticorrupcion_cv.pdf" style="width:100%; height:500px;" frameborder="0" ></iframe>                                                   
                         </div>  
                         <p class="textRegular">En ese sentido, de acuerdo a la posición que ocupo en Sociedad Minera Cerro Verde SAA., me comprometo a cumplir íntegramente con la Política Anticorrupción Corporativa y Política Anticorrupción de Sociedad Minera Cerro Verde SAA., así como aquellos lineamientos, reglas, procedimientos, y otras indicaciones que al respecto y con relación a ambas Políticas, ha emitido y pueda emitir Cerro Verde.</p>                        
-                         <% if (usuario.esAceptoPoli2 == 1) 
+                         <% if (conocenosVM.usuario.esAceptoPoli2 == 1) 
                             {%>   
                              <input class="form-check-input" type="checkbox" value="" id="checkAceptoPoli2" checked>
                             <% } else { %>
@@ -235,7 +235,7 @@
                             <iframe src="../files_out/19_politica_privacidad.pdf" style="width:100%; height:500px;" frameborder="0" ></iframe>                                                   
                         </div>  
                         <p class="textRegular">Declaro que he leído los alcances de la Política de Privacidad de Cerro Verde.</p>                        
-                         <% if (usuario.esAceptoPoli3 == 1) 
+                         <% if (conocenosVM.usuario.esAceptoPoli3 == 1) 
                             {%>   
                              <input class="form-check-input" type="checkbox" value="" id="checkAceptoPoli3" checked>
                             <% } else { %>

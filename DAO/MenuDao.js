@@ -1,3 +1,4 @@
+const logger = require('../logger/logGenerator');
 const pool = require('../database/config')
 const ReporteIngresoDTO = require('../DTO/ReporteIngresosDTO')
 
@@ -10,6 +11,7 @@ class MenuDao{
             return (result.affectedRows == 1) ? true : false;
         } catch (error) {
             console.log('MenuDao |actualizarCantidadIngresos| '+error); 
+            logger.info('MenuDao |actualizarCantidadIngresos| '+error); 
         }
     }
 
@@ -28,6 +30,7 @@ class MenuDao{
                     
         } catch (error) {
             console.log('MenuDao |obtenerReporteIngresos| '+error); 
+            logger.info('MenuDao |obtenerReporteIngresos| '+error); 
         }
     }
 }

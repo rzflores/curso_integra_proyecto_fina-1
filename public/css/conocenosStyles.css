@@ -326,18 +326,18 @@ body{
     
 }
 
-.vjs-progress-control.vjs-control{
+/* .vjs-progress-control.vjs-control{
     display: none;
-}
+} */
 
 .ulStyle {
     list-style: none; /* Quitamos los marcadores */   
     padding-left: 0px;     
 }
 
-.disabledControl{
+/* .disabledControl{
     display: hidden;
-}
+} */
 
 .liStyle::before {         
     content: "\2022"; /* Insertamos el marcador */

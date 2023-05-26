@@ -1,9 +1,9 @@
+const logger = require('../logger/logGenerator');
 const pool = require('../database/config')
 const UsuarioDTO = require('../DTO/UsuarioDTO')
 const DeshabilitarUsuarioDTO = require('../DTO/DeshabilitarUsuarioDTO')
 const ReporteAvanceDTO = require('../DTO/ReporteAvanceDTO')
 const { formatDate,secondsToString } = require('../helpers/converciones')
-const logger = require('../logger/logGenerator');
 
 
 class TrabajadoresDao { 
@@ -68,7 +68,8 @@ static insertarTrabajador = async (usuario) => {
          }
          return idInsert
     } catch (error) {
-            console.log('trabajadoresDao |insertarTrabajador| ' + error);          
+            console.log('trabajadoresDao |insertarTrabajador| ' + error);   
+            logger.info('trabajadoresDao |insertarTrabajador| ' + error);          
     }
 }
 
@@ -98,7 +99,8 @@ static insertarOpcionesTrabajador = async(  idUsuario ) => {
         return false;
                 
     } catch (error) {
-            console.log('trabajadoresDao |insertarOpcionesTrabajador| ' + error);           
+            console.log('trabajadoresDao | insertarOpcionesTrabajador| ' + error);      
+            logger.info('trabajadoresDao | insertarOpcionesTrabajador| ' + error);               
     }
 }
 
@@ -150,6 +152,7 @@ static insertarDocumentosTrabajador = async ( idUsuario ) => {
         return false;
     } catch (error) {
             console.log('trabajadoresDao | insertarDocumentosTrabajador|' + error);  
+            logger.info('trabajadoresDao | insertarDocumentosTrabajador| ' + error);
     }
 }
 
@@ -185,7 +188,8 @@ static obtenerTrabajadores = async () => {
         }
         return lstTrabajadores;
     } catch (error) {
-            console.log('trabajadoresDao |obtenerTrabajadores| '+error);           
+            console.log('trabajadoresDao | obtenerTrabajadores| '+error);
+            logger.info('trabajadoresDao | obtenerTrabajadores| ' + error);           
     }
 }
 
@@ -220,7 +224,8 @@ static obtenerTrabajador = async (idUsuario) => {
         return objUsuario;
                 
     } catch (error) {
-        console.log('trabajadoresDao |obtenerTrabajador| '+error);       
+        console.log('trabajadoresDao | obtenerTrabajador| '+error);   
+        logger.info('trabajadoresDao | obtenerTrabajador| ' + error);               
     }
 }
 
@@ -260,7 +265,8 @@ static editarTrabajador = async (usuario) => {
         }
         return respuesta;
     } catch (error) {
-        console.log('trabajadoresDao |editarTrabajador| Error:'+error);       
+        console.log('trabajadoresDao | editarTrabajador| '+ error);  
+        logger.info('trabajadoresDao | editarTrabajador| ' + error);                    
     }
 
 }
@@ -284,6 +290,7 @@ static deshabilitarTrabajador = async (deshabilitarUsuarioDTO) => {
                 
     } catch (error) {
         console.log('trabajadoresDao |deshabilitarTrabajador| Error:'+error);       
+        logger.info('trabajadoresDao | deshabilitarTrabajador| ' + error);                    
     }
 }
 
@@ -298,6 +305,7 @@ static aumentarNumeroIngreso = async(idUsuario) => {
         return respuesta;
     } catch (error) {
         console.log('trabajadoresDao |obtenerTrabajador| '+error);
+        logger.info('trabajadoresDao | obtenerTrabajador| ' + error);                    
     }
 }
 
@@ -314,6 +322,7 @@ static obtenerPrimerIngreso = async(idUsuario) => {
         return respuesta;
     } catch (error) {
         console.log('trabajadoresDao |obtenerPrimerIngreso| '+error);        
+        logger.info('trabajadoresDao | obtenerPrimerIngreso| ' + error);                    
     }
 
 }
@@ -331,6 +340,7 @@ static actualizarInicioFecha = async(idUsuario , fechaInicio) => {
         return respuesta;
     } catch (error) {
         console.log('trabajadoresDao |actualizarInicioFecha| '+error);
+        logger.info('trabajadoresDao | actualizarInicioFecha| ' + error);                    
     }
         
 }
@@ -346,6 +356,7 @@ static actualizarEnvioMitad = async(idUsuario) => {
         return respuesta;
     } catch (error) {
         console.log('trabajadoresDao |actualizarEnvioMitad| '+error);
+        logger.info('trabajadoresDao | actualizarEnvioMitad| ' + error);                    
     }
 }
 
@@ -360,6 +371,7 @@ static actualizarEnvioFinal = async(idUsuario) => {
         return respuesta;
     } catch (error) {
         console.log('trabajadoresDao |actualizarEnvioFinal| '+error);
+        logger.info('trabajadoresDao | actualizarEnvioFinal| ' + error);                    
     }
 }
 
@@ -376,6 +388,7 @@ static actualizarFinInduccion = async(idUsuario) => {
         return (resultUpdateFinInduccion.affectedRows == 1) ? true : false;
     } catch (error) {
         console.log('trabajadoresDao |actualizarFinInduccion| '+error);
+        logger.info('trabajadoresDao | actualizarFinInduccion| ' + error);                    
     }
 }
 
@@ -408,7 +421,8 @@ static obtenerReporteAvance = async ( ) => {
         return lstReporteAvance;
                 
     } catch (error) {
-            console.log(error);
+            console.log('trabajadoresDao |obtenerReporteAvance| '+error);
+            logger.info('trabajadoresDao | obtenerReporteAvance| ' + error);                    
     }
 
 }
@@ -449,7 +463,8 @@ static actualizarPolitica = async (idUsuario , esPolitica, idPoli) => {
         }
        return respuesta
     } catch (error) {
-        console.log('trabajadoresDao |actualizarPolitica| '+error);            
+        console.log('trabajadoresDao |actualizarPolitica| '+error);     
+        logger.info('trabajadoresDao | actualizarPolitica| ' + error);                           
     }
 }
 

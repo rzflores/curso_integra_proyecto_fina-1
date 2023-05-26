@@ -399,18 +399,19 @@ const getEditarPolitica = async (req  , res ) => {
         
         let lstAvanceMenus = await UsuarioAvanceService.obtenerMenusAvance(usuario.idUsuario)   
         let lstAvanceSubMenus = await UsuarioAvanceService.obtenerSubMenusAvance(usuario.idUsuario , 1)
-        await UsuarioService.actualizarPolitica(u.idUsuario,esPolitica,idPoli) 
+        await UsuarioService.actualizarPolitica(usuario.idUsuario,esPolitica,idPoli) 
 
         if(idPoli == 1){
-            u.esAceptoPoli = esPolitica
+            usuario.esAceptoPoli = esPolitica
         }
         if(idPoli == 2){
-            u.esAceptoPoli2 = esPolitica
+            usuario.esAceptoPoli2 = esPolitica
         }
         if(idPoli == 3){
-            u.esAceptoPoli3 = esPolitica
+            usuario.esAceptoPoli3 = esPolitica
         }
 
+        usuario.valorAvance = await UsuarioAvanceService.actualizarValorAvance(usuario.idUsuario)
         let conocenosVM = new ConocenosVM( usuario , lstAvanceMenus, lstAvanceSubMenus, "PoliticaAnticorrupcion" , idMenu, 1 )
         
         res.render('conocenos.ejs', {conocenosVM : conocenosVM})                      
@@ -437,8 +438,10 @@ const postHabilitarSiguiente = async (req,res)=> {
 
         usuario.valorAvance =  await UsuarioAvanceService.actualizarValorAvance(usuario.idUsuario)
 
-        let lstAvanceMenus = await UsuarioAvanceService.obtenerMenusAvance(usuario.idUsuario)   
-        let lstAvanceSubMenus = await UsuarioAvanceService.obtenerSubMenusAvance(usuario.idUsuario , idMenu)
+        let lstAvanceMenus = await UsuarioAvanceService.obtenerMenusAvance(usuario.idUsuario)  
+        console.log(usuario.idUsuario) 
+        console.log(idMenu) 
+        let lstAvanceSubMenus = await UsuarioAvanceService.obtenerSubMenusAvance(usuario.idUsuario , 1)
 
         let conocenosVM = new ConocenosVM( usuario , lstAvanceMenus, lstAvanceSubMenus, divId , 0, idMenu )
 

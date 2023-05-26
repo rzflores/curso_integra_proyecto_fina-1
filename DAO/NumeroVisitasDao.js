@@ -1,3 +1,4 @@
+const logger = require('../logger/logGenerator');
 const pool = require('../database/config')
 
 class NumeroVisitasDao{
@@ -12,7 +13,9 @@ class NumeroVisitasDao{
                 }
             return numVisitas;                    
         } catch (error) {
-            console.log('NumeroVisitasDao |obtenerNumeroVisitas| '+error);                  
+            console.log('NumeroVisitasDao |obtenerNumeroVisitas| '+error);          
+            logger.info('NumeroVisitasDao |obtenerNumeroVisitas| '+error);          
+            
         }
     }
 
@@ -22,6 +25,7 @@ class NumeroVisitasDao{
             return (result.affectedRows == 1) ? true : false;
             } catch (error) {
                 console.log('NumeroVisitasDao |aumentarNumeroVisitas| '+error);       
+                logger.info('NumeroVisitasDao |aumentarNumeroVisitas| '+error);       
             }
     }
 }

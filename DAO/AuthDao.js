@@ -1,7 +1,10 @@
+const logger = require('../logger/logGenerator');
+
 const pool = require('../database/config')
 const AuthDTO = require('../DTO/AuthDTO')
 const UsuarioDTO = require('../DTO/UsuarioDTO')
 const { formatDate } = require('../helpers/converciones')
+
 
 class AuthDao{
     constructor(){}
@@ -37,8 +40,9 @@ class AuthDao{
                     )
             }
             return objUsuario;
-        } catch (error) {
+        } catch (error) {            
             console.log('authDao |loginUsuario| '+error);   
+            logger.info('authDao |loginUsuario| '+error);   
         }
     
     }
