@@ -1,0 +1,674 @@
+<html lang="en">
+<head>    
+    <title>Cv Inducción</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- videohjs-->
+    <link href="https://vjs.zencdn.net/8.0.4/video-js.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/documentacionStyles.css">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="shortcut icon" type="image/png" href="../assets/logocv.png">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body id="bodyDocumentacion">   
+  <header>
+    <nav class="menu-superior header-style">  
+          <div class="row">
+              <div class="col-6">
+                  <p class="text-white"> </p>
+                  <img class="img_logo" src="../assets/cv_logo.png"  >
+              </div>
+              <div class="col-6 procesoStyle">                   
+                  <h3 class="text-white styleValorAvance pr-3"><%= documentacionVM.usuario.valorAvance %>% </h3><h3 class="text-white styleTextValorAvance">proceso completado</h3>
+              </div>
+          </div> 
+          <ul>
+              <% documentacionVM.avanceSubMenus.forEach(function(p) { %>                                   
+                  <%if(documentacionVM.menuActual == p.idSubMenu){ %>
+                      <li id="btn_conocenos_page1" style="background-color:#c35a02;">
+                          <a  href="<%= p.link %>?MenuActual=<%=p.idSubMenu%>">
+                           <% p.nombre.split(",").forEach(e => {  %>                                        
+                                    <span> <%= e %><br> </span>
+                           <% }) %>
+                          </a>
+                      </li>
+                  <%}else {%> 
+                  <li id="btn_conocenos_page1" style="
+                      <% if (p.esVisitado) {%>                         
+                              background-color:#fd7e14;                        
+                      <%} else { %> 
+                          background-color:#acacab; 
+                      <%}%>">
+                          <a  href="<%= p.link %>?MenuActual=<%=p.idSubMenu%>">
+                           <% p.nombre.split(",").forEach(e => {  %>                                        
+                                    <span> <%= e %><br> </span>
+                           <% }) %>
+                      </a>
+                  </li>
+                  <%}%>                  
+              <% }); %>   
+          </ul>        
+    </nav>
+  </header>
+  <div class="contenido">
+		<nav class="menu-lateral">
+			<ul>
+        <% documentacionVM.avanceMenus.forEach(function(p) { %>                                   
+          <% if (p.idMenu == documentacionVM.menuLateral) { %>
+              <li style="background-color:#c35a02;"> <a class="list-group-item list-group-item-action text-center list-group-item-light  p-4 nav-sidevar-style TextTileSidebar"                                            
+                  href="<%=p.link%>?idMenuLateral=<%=p.idMenu%>&idActualLateral=1"><%= p.nombre %></a></li>
+                  <%}else {%> 
+                  <li style="<% if (p.esVisitado) {%>                                          
+                      background-color:#fd7e14;                                         
+                  <%} else { %> 
+                      background-color:#acacab; 
+                  <%}%>"> <a class="list-group-item list-group-item-action text-center list-group-item-light  p-4 nav-sidevar-style TextTileSidebar"                           
+                   href="<%=p.link%>?idMenuLateral=<%=p.idMenu%>&idActualLateral=1"><%= p.nombre %></a></li>
+          <% } %>   
+      <% }); %>    
+			</ul>
+            <div  class="side-navbar-footer">
+                <div class="container divSidebarStyle">                        
+                    <p class="textRegularSidebar"><b> Hola <%= documentacionVM.usuario.Nombres %> </b></p>
+                    <p class="textRegularSidebar">Revisa tus fechas <br>  de inducción</p>
+                    <p class="textRegularSidebar"><b class="textRegularSidebarNaranja">Inducción de Seguridad</b><br> <%= documentacionVM.usuario.induccionSeg %></p>
+                    <p class="textRegularSidebar"> <b class="textRegularSidebarNaranja">Inducción de RRHH</b> <br> <%= documentacionVM.usuario.induccionRH %></p>
+                    <p class="textRegularSidebar"><b class="textRegularSidebarNaranja">Fecha Límite para completar este proceso de incorporación</b><br> <%= documentacionVM.usuario.limiteFecha %></p>
+                </div>
+            </div>
+		</nav>
+		<main>
+            <% if (documentacionVM.divId == "documentacion_1") { %>
+              <div  class="documentacion">                    
+                    <a id="floatArrow" href="#scrollBotDoc1" class="float animate__animated animate__bounce animate__infinite"  data-toggle="tooltip" data-placement="top" title="Mas Información">
+                      <i class="fa-solid fa-arrow-down  my-float" ></i>
+                    </a>
+                    <table class="table styleTableBorderTop">
+                    <thead>
+                      <tr class="styleTableBorderBottom"> 
+                        <th scope="col"></th>                                                                         
+                        <th scope="col"></th>
+                        <th class="textLight" scope="" colspan="3">Documentos</th>
+                        <th scope="col"></th>
+                      </tr>
+                    </thead>
+                    <tbody>                                                                     
+                        <td class="styleTableBorderBottom"></td>
+                        <td class="styleTableBorderBottom"></td>
+                        <td class="textRegular rowBorderBottom  textTitleTableDescarga"><b>Descarga</b></td>
+                        <td class="textRegular rowBorderBottom  textTitleTableCarga"><b>Carga</b></td>
+                        <td class="textRegular rowBorderBottom textTitleTableDescarga"><b>Documento</b> </td>
+                      </tr>
+                      <tr class="align-middle">   
+                        <td class="styleTableBorderBottom"><b class="numberTableStyle">1.</b></td>                                              
+                        <td class="textRegular rowBorderBottom rowBorderRightStyle">Ficha Única de datos - completar el formato digital(Excel)</td>
+                        <td class="rowBorderTableStyle rowBorderBottom"><a href="../files_out/1_Ficha_Unica_de_Datos.xlsx"><img class="styleDescargaImg"  src="../assets/descarga.jpg" alt=""></a></td>
+                        <td class="rowBorderTableStyle rowBorderBottom">
+                          <form id="form1" action="/sync/cargarDocumentacion?codeDoc=1_documento1" enctype="multipart/form-data" method="post" >
+                            <label class="lblImg" for="file_inDoc1"><img  class="styleCargaDoc" src="../assets/carga.jpg" alt=""></label>
+                            <input style="display:none;" type="file"
+                                  id="file_inDoc1" name="file_inDoc1"
+                                  multiple="false"
+                                  accept=".doc,.docx,.csv,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel,application/pdf">
+                            <input id="btnGuardarDoc1" type="submit" style="display:none;">
+                          </form>    
+                        </td>
+                        <td class="rowBorderTableName rowBorderBottom">                       
+                          <% if (documentacionVM.lstUsuarioDocumentoNombres.length > 0) { %>  
+                            <% documentacionVM.lstUsuarioDocumentoNombres.forEach(function(doc) { %>   
+                                <% if (doc.idDoc === 1) { %>  
+                                <p id="cargaTextDesc1"><%= doc.nombre  %></p>
+                                <% } else  { %>
+                                  <p id="cargaTextDesc1"></p>
+                                <% } %>        
+                            <% }); %>
+                        <% } else  { %> 
+                          <p id="cargaTextDesc1"></p>
+                        <% } %>  
+                        </td>
+                      </tr>
+                      <tr class="">     
+                        <td class="styleTableBorderBottom"><b class="numberTableStyle">2.</b></td>                                           
+                        <td class="textRegular rowBorderBottom rowBorderRightStyle"> Croquis de Domicilio - completar el formato digital</td>
+                        <td class="rowBorderTableStyle rowBorderBottom"><a href="../files_out/2_Croquis_de_Domicilio.doc"><img class="styleDescargaImg" src="../assets/descarga.jpg" alt=""></a></td>
+                        <td class="rowBorderTableStyle rowBorderBottom">
+                          <form id="form2" action="/sync/cargarDocumentacion2?codeDoc=2_documento2" enctype="multipart/form-data" method="post" >
+                            <label class="lblImg" for="file_inDoc2"><img  class="styleCargaDoc" src="../assets/carga.jpg" alt=""></label>
+                            <input style="display:none;" type="file"
+                                  id="file_inDoc2" name="file_inDoc2"
+                                  multiple="false"
+                                  accept=".doc,.docx,.csv,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel,application/pdf">
+                            <input id="btnGuardarDoc2" type="submit" style="display:none;">
+                          </form>    
+                        </td>
+                        <td class="rowBorderTableName rowBorderBottom">                       
+                          <% if (documentacionVM.lstUsuarioDocumentoNombres.length > 0) { %>  
+                            <% documentacionVM.lstUsuarioDocumentoNombres.forEach(function(doc) { %>   
+                                <% if (doc.idDoc === 2) { %>  
+                                <p id="cargaTextDesc2"><%= doc.nombre  %></p>
+                                <% } else  { %>
+                                  <p id="cargaTextDesc2"></p>
+                                <% } %>        
+                            <% }); %>
+                        <% } else  { %> 
+                          <p id="cargaTextDesc2"></p>
+                        <% } %>  
+                        </td>
+                      </tr>
+                      <tr class="">  
+                        <td class="styleTableBorderBottom"><b class="numberTableStyle">3.</b></td>                      
+                        <td class="textRegular rowBorderBottom rowBorderRightStyle"> Copia de DNI</td>
+                        <td class="rowBorderTableStyle rowBorderBottom"><img class="styleDescargaImg" src="../assets/descarga_inactivo.jpg" alt=""></td>
+                        <td class="rowBorderTableStyle rowBorderBottom">
+                          <form id="form3" action="/sync/cargarDocumentacion3?codeDoc=3_documento3" enctype="multipart/form-data" method="post" >
+                            <label class="lblImg" for="file_inDoc3"><img  class="styleCargaDoc" src="../assets/carga.jpg" alt=""></label>
+                            <input style="display:none;" type="file"
+                                  id="file_inDoc3" name="file_inDoc3"
+                                  multiple="false"
+                                  accept=".doc,.docx,.csv,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel,application/pdf">
+                            <input id="btnGuardarDoc3" type="submit" style="display:none;">
+                          </form>    
+                        </td>
+                        <td class="rowBorderTableName rowBorderBottom">                       
+                          <% if (documentacionVM.lstUsuarioDocumentoNombres.length > 0) { %>  
+                            <% documentacionVM.lstUsuarioDocumentoNombres.forEach(function(doc) { %>   
+                                <% if (doc.idDoc === 3) { %>  
+                                <p id="cargaTextDesc3"><%= doc.nombre  %></p>
+                                <% } else  { %>
+                                  <p id="cargaTextDesc3"></p>
+                                <% } %>        
+                            <% }); %>
+                        <% } else  { %> 
+                          <p id="cargaTextDesc3"></p>
+                        <% } %>  
+                        </td>
+                      </tr>
+                      <tr class=""> 
+                        <td class="styleTableBorderBottom"><b class="numberTableStyle">4.</b></td>                       
+                        <td class="textRegular rowBorderBottom rowBorderRightStyle"> Copia de certificado de estudios</td>
+                        <td class="rowBorderTableStyle rowBorderBottom"><img class="styleDescargaImg" src="../assets/descarga_inactivo.jpg" alt=""></td>
+                        <td class="rowBorderTableStyle rowBorderBottom">
+                          <form id="form4" action="/sync/cargarDocumentacion4?codeDoc=4_documento4" enctype="multipart/form-data" method="post" >
+                            <label class="lblImg" for="file_inDoc4"><img  class="styleCargaDoc" src="../assets/carga.jpg" alt=""></label>
+                            <input style="display:none;" type="file"
+                                  id="file_inDoc4" name="file_inDoc4"
+                                  multiple="false"
+                                  accept=".doc,.docx,.csv,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel,application/pdf">
+                            <input id="btnGuardarDoc4" type="submit" style="display:none;">
+                          </form>    
+                        </td>
+                        <td class="rowBorderTableName rowBorderBottom">                       
+                          <% if (documentacionVM.lstUsuarioDocumentoNombres.length > 0) { %>  
+                            <% documentacionVM.lstUsuarioDocumentoNombres.forEach(function(doc) { %>   
+                                <% if (doc.idDoc === 4) { %>  
+                                <p id="cargaTextDesc4"><%= doc.nombre  %></p>
+                                <% } else  { %>
+                                  <p id="cargaTextDesc4"></p>
+                                <% } %>        
+                            <% }); %>
+                        <% } else  { %> 
+                          <p id="cargaTextDesc4"></p>
+                        <% } %>  
+                        </td>
+                      </tr>
+                      <tr class="">  
+                        <td class="styleTableBorderBottom"><b class="numberTableStyle">5.</b></td>                      
+                        <td class="textRegular rowBorderBottom rowBorderRightStyle"> Voucher de la cuenta de haberes</td>
+                        <td class="rowBorderTableStyle rowBorderBottom"><img class="styleDescargaImg" src="../assets/descarga_inactivo.jpg" alt=""></td>
+                        <td class="rowBorderTableStyle rowBorderBottom">
+                          <form if="form5" action="/sync/cargarDocumentacion5?codeDoc=5_documento5" enctype="multipart/form-data" method="post" >
+                            <label class="lblImg" for="file_inDoc5"><img  class="styleCargaDoc" src="../assets/carga.jpg" alt=""></label>
+                            <input style="display:none;" type="file"
+                                  id="file_inDoc5" name="file_inDoc5"
+                                  multiple="false"
+                                  accept=".doc,.docx,.csv,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel,application/pdf">
+                            <input id="btnGuardarDoc5" type="submit" style="display:none;">
+                          </form>    
+                        </td>
+                        <td class="rowBorderTableName rowBorderBottom">                       
+                          <% if (documentacionVM.lstUsuarioDocumentoNombres.length > 0) { %>  
+                            <% documentacionVM.lstUsuarioDocumentoNombres.forEach(function(doc) { %>   
+                                <% if (doc.idDoc === 5) { %>  
+                                <p id="cargaTextDesc5"><%= doc.nombre  %></p>
+                                <% } else  { %>
+                                  <p id="cargaTextDesc5"></p>
+                                <% } %>        
+                            <% }); %>
+                        <% } else  { %> 
+                          <p id="cargaTextDesc5"></p>
+                        <% } %>  
+                        </td>
+                      </tr>
+                      <tr class="">  
+                        <td class="styleTableBorderBottom"><b class="numberTableStyle">6.</b></td>                      
+                        <td class="textRegular rowBorderBottom rowBorderRightStyle"> Antecedentes penales</td>
+                        <td class="rowBorderTableStyle rowBorderBottom"><a href=""><img class="styleDescargaImg" src="../assets/descarga_inactivo.jpg" alt=""></a></td>
+                        <td class="rowBorderTableStyle rowBorderBottom">
+                          <form id="form6" action="/sync/cargarDocumentacion6?codeDoc=6_documento6" enctype="multipart/form-data" method="post" >
+                            <label class="lblImg" for="file_inDoc6"><img  class="styleCargaDoc" src="../assets/carga.jpg" alt=""></label>
+                            <input style="display:none;" type="file"
+                                  id="file_inDoc6" name="file_inDoc6"
+                                  multiple="false"
+                                  accept=".doc,.docx,.csv,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel,application/pdf">
+                            <input id="btnGuardarDoc6" type="submit" style="display:none;">
+                          </form>    
+                        </td>
+                        <td class="rowBorderTableName rowBorderBottom">                       
+                          <% if (documentacionVM.lstUsuarioDocumentoNombres.length > 0) { %>  
+                            <% documentacionVM.lstUsuarioDocumentoNombres.forEach(function(doc) { %>   
+                                <% if (doc.idDoc === 6) { %>  
+                                <p id="cargaTextDesc6"><%= doc.nombre  %></p>
+                                <% } else  { %>
+                                  <p id="cargaTextDesc6"></p>
+                                <% } %>        
+                            <% }); %>
+                        <% } else  { %> 
+                          <p id="cargaTextDesc6"></p>
+                        <% } %>  
+                        </td>
+                      </tr>
+                      <tr class=""> 
+                        <td class="styleTableBorderBottom"><b class="numberTableStyle">7.</b></td>                       
+                        <td class="textRegular rowBorderBottom rowBorderRightStyle"> Antecedentes policiales</td>
+                        <td class="rowBorderTableStyle rowBorderBottom"><img class="styleDescargaImg" src="../assets/descarga_inactivo.jpg" alt=""></td>
+                        <td class="rowBorderTableStyle rowBorderBottom">
+                          <form id="form7" action="/sync/cargarDocumentacion7?codeDoc=7_documento7" enctype="multipart/form-data" method="post" >
+                            <label class="lblImg" for="file_inDoc7"><img  class="styleCargaDoc" src="../assets/carga.jpg" alt=""></label>
+                            <input style="display:none;" type="file"
+                                  id="file_inDoc7" name="file_inDoc7"
+                                  multiple="false"
+                                  accept=".doc,.docx,.csv,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel,application/pdf">
+                            <input id="btnGuardarDoc7" type="submit" style="display:none;">
+                          </form>    
+                        </td>
+                        <td class="rowBorderTableName rowBorderBottom">                       
+                          <% if (documentacionVM.lstUsuarioDocumentoNombres.length > 0) { %>  
+                            <% documentacionVM.lstUsuarioDocumentoNombres.forEach(function(doc) { %>   
+                                <% if (doc.idDoc === 7) { %>  
+                                <p id="cargaTextDesc7"><%= doc.nombre  %></p>
+                                <% } else  { %>
+                                  <p id="cargaTextDesc7"></p>
+                                <% } %>        
+                            <% }); %>
+                        <% } else  { %> 
+                          <p id="cargaTextDesc7"></p>
+                        <% } %>  
+                        </td>
+                      </tr>
+                      <tr class=""> 
+                        <td class="styleTableBorderBottom"><b class="numberTableStyle">8.</b></td>                       
+                        <td class="textRegular rowBorderBottom rowBorderRightStyle"> Anexo 3 (Información patrimonial) - completar formato digital</p></td>
+                        <td class="rowBorderTableStyle rowBorderBottom"><a href="../files_out/8_Anexo_información_patrimonial.xls"><img class="styleDescargaImg" src="../assets/descarga.jpg" alt=""></a></td>
+                        <td class="rowBorderTableStyle rowBorderBottom">
+                          <form id="form8" id="form8" action="/sync/cargarDocumentacion8?codeDoc=8_documento8" enctype="multipart/form-data" method="post" >
+                            <label class="lblImg" for="file_inDoc8"><img  class="styleCargaDoc" src="../assets/carga.jpg" alt=""></label>
+                            <input style="display:none;" type="file"
+                                  id="file_inDoc8" name="file_inDoc8"
+                                  multiple="false"
+                                  accept=".doc,.docx,.csv,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel,application/pdf">
+                            <input id="btnGuardarDoc8" type="submit" style="display:none;">
+                          </form>    
+                        </td>
+                        <td class="rowBorderTableName rowBorderBottom">                       
+                          <% if (documentacionVM.lstUsuarioDocumentoNombres.length > 0) { %>  
+                            <% documentacionVM.lstUsuarioDocumentoNombres.forEach(function(doc) { %>   
+                                <% if (doc.idDoc === 8) { %>  
+                                <p id="cargaTextDesc8"><%= doc.nombre  %></p>
+                                <% } else  { %>
+                                  <p id="cargaTextDesc8"></p>
+                                <% } %>        
+                            <% }); %>
+                        <% } else  { %> 
+                          <p id="cargaTextDesc8"></p>
+                        <% } %>  
+                        </td>
+                      </tr>
+                      <tr class=""> 
+                        <td class="styleTableBorderBottom"><b class="numberTableStyle">9.</b></td>                       
+                        <td class="textRegular rowBorderBottom rowBorderRightStyle"> Autorización de verificación de est. prof. y exp. lab </p></td>
+                        <td class="rowBorderTableStyle rowBorderBottom"><a href="../files_out/9_Autorización_de_verif_ de_est_prof_y_exp_lab.pdf" target="_blank"><img class="styleDescargaImg" src="../assets/descarga.jpg" alt=""></a></td>
+                        <td class="rowBorderTableStyle rowBorderBottom">
+                          <form id="form9" action="/sync/cargarDocumentacion9?codeDoc=9_documento9" enctype="multipart/form-data" method="post" >
+                            <label class="lblImg" for="file_inDoc9"><img  class="styleCargaDoc" src="../assets/carga.jpg" alt=""></label>
+                            <input style="display:none;" type="file"
+                                  id="file_inDoc9" name="file_inDoc9"
+                                  multiple="false"
+                                  accept=".doc,.docx,.csv,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel,application/pdf">
+                            <input id="btnGuardarDoc9" type="submit" style="display:none;">
+                          </form>    
+                        </td>
+                        <td class="rowBorderTableName rowBorderBottom">                       
+                          <% if (documentacionVM.lstUsuarioDocumentoNombres.length > 0) { %>  
+                            <% documentacionVM.lstUsuarioDocumentoNombres.forEach(function(doc) { %>   
+                                <% if (doc.idDoc === 9) { %>  
+                                <p id="cargaTextDesc9"><%= doc.nombre  %></p>
+                                <% } else  { %>
+                                  <p id="cargaTextDesc9"></p>
+                                <% } %>        
+                            <% }); %>
+                        <% } else  { %> 
+                          <p id="cargaTextDesc9"></p>
+                        <% } %>  
+                        </td>
+                      </tr>
+                      <tr class=""> 
+                        <td class="styleTableBorderBottom"><b class="numberTableStyle">10.</b></td>                       
+                        <td class="textRegular rowBorderBottom rowBorderRightStyle"> Subir una foto tamaño carnet</td>
+                        <td class="rowBorderTableStyle rowBorderBottom"><img class="styleDescargaImg" src="../assets/descarga_inactivo.jpg" alt=""></td>
+                        <td class="rowBorderTableStyle rowBorderBottom">
+                          <form id="form17" action="/sync/cargarDocumentacion17?codeDoc=17_documento17" enctype="multipart/form-data" method="post" >
+                            <label class="lblImg" for="file_inDoc17"><img  class="styleCargaDoc" src="../assets/carga.jpg" alt=""></label>
+                            <input style="display:none;" type="file"
+                                  id="file_inDoc17" name="file_inDoc17"
+                                  multiple="false"
+                                  accept=".png,.doc,.docx,.csv,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel,application/pdf">
+                            <input id="btnGuardarDoc17" type="submit" style="display:none;">
+                          </form>    
+                        </td>
+                        <td class="rowBorderTableName rowBorderBottom">                       
+                          <% if (documentacionVM.lstUsuarioDocumentoNombres.length > 0) { %>  
+                            <% documentacionVM.lstUsuarioDocumentoNombres.forEach(function(doc) { %>   
+                                <% if (doc.idDoc === 17) { %>  
+                                <p id="cargaTextDesc17"><%= doc.nombre  %></p>
+                                <% } else  { %>
+                                  <p id="cargaTextDesc17"></p>
+                                <% } %>        
+                            <% }); %>
+                        <% } else  { %> 
+                          <p id="cargaTextDesc17"></p>
+                        <% } %>  
+                        </td>
+                      </tr>
+                    </tbody>
+                   </table>
+                </div>
+                <div class="container pt-5 documentacion_coordenadas">
+                  <p class="textRegular pt-2">En caso de tener alguna consulta referida a 
+                    esta documentación, puedes comunicar con ADP o Bienestar Organizacional :</p>
+                    <ul class="ulStyle">
+                      <li class="textRegular liStyle">
+                        Vanesa Zamalloa  - Administración de Personal
+                      </li>
+                      <li class="pl-3">
+                        vzamallo@fmi.com - 961851863
+                      </li>
+                      <li class="textRegular liStyle">
+                        Jean Sanz - Administración de Personal 
+                      </li>
+                      <li class="pl-3">
+                        jsanzsal@fmi.com - 958316984
+                      </li>
+                    </ul>
+                    <h2 id="scrollBotDoc1" class="subTexDocumentacion"><img src="../assets/coordenadas.jpg" alt=""> Coordenadas</h2>
+                    <h3 class="pt-4 subTexDocumentacionNegrita">1. Ingresa a la dirección <a class="linkStyleDocumentacion" target="_blank" href="https://maps.google.com.pe/">https://maps.google.com.pe/</a> y ubica tu domicilio de la 
+                        siguiente manera: </h3>
+                     <p class="textRegular pt-2">En el cuadro de texto de la parte superior izquierda ingresar sus datos como calle, distrito 
+                        y ciudad. 
+                        Si no ubicara la calle, ingresar la información de algún lugar cercano como por ejemplo: 
+                        una avenida principal, una plaza, etc. Y a partir de ahí ubicar su domicilio. 
+                    </p>
+                    <div class="row pt-4 pb-5">
+                        <div class="col-6">
+                           <img class="imgCoordenada" src="../assets/coordenadas_1a.jpg" alt="">     
+                        </div>                        
+                        <div class="col-6">
+                           <img class="imgCoordenada" src="../assets/coordenadas_1b.jpg" alt="">         
+                        </div>
+                    </div>                    
+                    <div class="row rowStyleBorderTop pt-5 pb-5">
+                        <div class="col-6">
+                            <h3 class="subTexDocumentacionNegrita">2. Haz click derecho en el punto 
+                                exacto donde queda su domicilio y 
+                                luego hacer click izquierdo en la 
+                                Opción ¿QUÉ HAY AQUÍ?</h3>
+                        </div>
+                        <div class="col-6">
+                           <img class="imgCoordenada" src="../assets/coordenadas_2.jpg" alt="">         
+                        </div>
+                    </div>
+                    <div class="row rowStyleBorderTop pt-5 pb-5">
+                        <div class="col-6">
+                           <h3 class="subTexDocumentacionNegrita">3. Anotar las coordenadas que 
+                            aparecen en el cuadro de la parte 
+                            superior izquierda. </h3>     
+                            <h3 class="subTexDocumentacionNegrita">Ingresar esta información en su 
+                                ficha de ingreso.</h3>
+                        </div>
+                        <div class="col-6">
+                           <img  class="imgCoordenada" src="../assets/coordenadas_3.jpg" alt="">         
+                        </div>
+                    </div>
+                    <div class="row rowStyleBorderTop pt-5 pb-5">
+                        <div class="col-6">
+                           <h3 class="subTexDocumentacionNegrita">4. Para agregar la imagen al Croquis, 
+                            se debe cambiar la vista del mapa 
+                            a satelital.</h3>
+                        </div>
+                        <div class="col-6">
+                           <img class="imgCoordenada" src="../assets/coordenadas_4.jpg" alt="">         
+                        </div>
+                    </div>
+                    <div class="row rowStyleBorderTop pt-5 pb-5">
+                        <div class="col-6">
+                           <h3 class="subTexDocumentacionNegrita">5. Seleccionar Ctrl + Alt+ Impr Pant (de esta forma seleccionamos la pantalla) y 
+                            Pegar en el formato de Croquis adjunto </h3>
+                        </div>
+                        <div class="col-6">
+                           <img class="imgCoordenada" src="../assets/coordenadas_5.jpg" alt="">         
+                        </div>
+                    </div>
+                </div>
+            <% } else  { %>    
+                <div  class="documentacion_2" >                                            
+                    <table class="table styleTableBorderTop">
+                        <thead>
+                          <tr class="styleTableBorderBottom"> 
+                            <th scope="col"></th>
+                            <th scope="col"></th>                                                                         
+                            <th class="textLight" scope="" colspan="3">Documentos</th>
+                            <th class="rowBorderBottom" scope="col"></th>
+                            <th class="rowBorderBottom" scope="col"></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr class="">                                                                          
+                            <td class="styleTableBorderBottom"></td>
+                            <td class="styleTableBorderBottom" ></td>
+                            <td class="textRegular  rowBorderBottom textTitleTableDescarga"><b>Descarga</b> </td>
+                            <td class="textRegular  rowBorderBottom textTitleTableCarga"><b>Carga</b></td>
+                            <td class="textRegular  rowBorderBottom textTitleTableDescarga"><b>Documento</b> </td>
+                          </tr>
+                          <tr>   
+                            <td class="styleTableBorderBottom"><b class="numberTableStyle">1.</b></td>                                              
+                            <td class="textRegular rowBorderBottom rowBorderRightStyle">Formato Nuevos Ingresos</td>
+                            <td class="rowBorderTableStyle rowBorderBottom"><a href="../files_out/10_Formato_Nuevos_Ingresos.pdf" target="_blank"><img class="styleDescargaImg" src="../assets/descarga.jpg" alt=""></a></td>                            
+                            <td class="rowBorderTableStyle rowBorderBottom">
+                              <form id="form10" action="/sync/cargarDocumentacion10?codeDoc=10_documento10" enctype="multipart/form-data" method="post" >
+                                <label class="lblImg" for="file_inDoc10"><img  class="styleCargaDoc" src="../assets/carga.jpg" alt=""></label>
+                                <input style="display:none;" type="file"
+                                      id="file_inDoc10" name="file_inDoc10"
+                                      multiple="false"
+                                      accept=".doc,.docx,.csv,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel,application/pdf">
+                                <input id="btnGuardarDoc10" type="submit" style="display:none;">
+                              </form>    
+                            </td>                            
+                            <td class="rowBorderTableName rowBorderBottom">
+                              <% if (documentacionVM.lstUsuarioDocumentoNombres.length > 0) { %>  
+                                    <% documentacionVM.lstUsuarioDocumentoNombres.forEach(function(doc) { %>   
+                                        <% if (doc.idDoc === 10) { %>  
+                                        <p class="textOverflow" id="cargaTextDesc10"><%= doc.nombre  %></p>
+                                        <% } else  { %>
+                                          <p id="cargaTextDesc10"></p>
+                                        <% } %>        
+                                    <% }); %>
+                              <% } else  { %> 
+                                <p id="cargaTextDesc10"></p>
+                              <% } %>        
+                            </td>
+                          </tr>
+                          <tr>  
+                            <td class="styleTableBorderBottom"><b class="numberTableStyle">2.</b></td>                                              
+                            <td class="textRegular rowBorderBottom rowBorderRightStyle">Formato Solicitud de Afiliación PAMF - EPS</td>
+                            <td class="rowBorderTableStyle rowBorderBottom"><a href="../files_out/11_Formato_Solicitud_de_Afiliación_PAMF_EPS.pdf" target="_blank"><img class="styleDescargaImg" src="../assets/descarga.jpg" alt=""></a></td>
+                            <td class="rowBorderTableStyle rowBorderBottom">
+                              <form id="form11" action="/sync/cargarDocumentacion11?codeDoc=11_documento11" enctype="multipart/form-data" method="post" >
+                                <label class="lblImg" for="file_inDoc11"><img  class="styleCargaDoc" src="../assets/carga.jpg" alt=""></label>
+                                <input style="display:none;" type="file"
+                                      id="file_inDoc11" name="file_inDoc11"
+                                      multiple="false"
+                                      accept=".doc,.docx,.csv,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel,application/pdf">
+                                <input id="btnGuardarDoc11" type="submit" style="display:none;">
+                              </form>    
+                            </td>
+                            <td class="rowBorderTableName rowBorderBottom">
+                              <% if (documentacionVM.lstUsuarioDocumentoNombres.length > 0) { %>  
+                                <% documentacionVM.lstUsuarioDocumentoNombres.forEach(function(doc) { %>   
+                                    <% if (doc.idDoc === 11) { %>  
+                                    <p id="cargaTextDesc11"><%= doc.nombre  %></p>
+                                    <% } else  { %>
+                                      <p id="cargaTextDesc11"></p>
+                                    <% } %>        
+                                <% }); %>
+                            <% } else  { %> 
+                              <p id="cargaTextDesc11"></p>
+                            <% } %>  
+                            </td>
+                          </tr>
+                          <tr>  
+                            <td class="styleTableBorderBottom"><b class="numberTableStyle">3.</b></td>                      
+                            <td class="textRegular rowBorderBottom rowBorderRightStyle">Declaración Jurada Seguro Vida Ley</td>
+                            <td class="rowBorderTableStyle rowBorderBottom"><a href="../files_out/12_Declaracion_Jurada_Seguro_Vida_Ley.pdf" target="_blank"><img class="styleDescargaImg" src="../assets/descarga.jpg" alt=""></a></td>
+                            <td class="rowBorderTableStyle rowBorderBottom">
+                              <form id="form12" action="/sync/cargarDocumentacion12?codeDoc=12_documento12" enctype="multipart/form-data" method="post" >
+                                <label class="lblImg" for="file_inDoc12"><img  class="styleCargaDoc" src="../assets/carga.jpg" alt=""></label>
+                                <input style="display:none;" type="file"
+                                      id="file_inDoc12" name="file_inDoc12"
+                                      multiple="false"
+                                      accept=".doc,.docx,.csv,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel,application/pdf">
+                                <input id="btnGuardarDoc12" type="submit"style="display:none;">
+                              </form>    
+                            </td>
+                            <td class="rowBorderTableName rowBorderBottom">
+                              <% if (documentacionVM.lstUsuarioDocumentoNombres.length > 0) { %>  
+                                    <% documentacionVM.lstUsuarioDocumentoNombres.forEach(function(doc) { %>   
+                                        <% if (doc.idDoc === 12) { %>  
+                                        <p id="cargaTextDesc12"><%= doc.nombre  %></p>
+                                        <% } else  { %>
+                                          <p id="cargaTextDesc12"></p>
+                                        <% } %>        
+                                    <% }); %>
+                              <% } else  { %> 
+                                <p id="cargaTextDesc12"></p>
+                              <% } %>  
+                            </td>
+                          </tr>
+                          <tr> 
+                            <td class="styleTableBorderBottom"><b class="numberTableStyle">4.</b></td>                       
+                            <td class="textRegular rowBorderBottom rowBorderRightStyle">Autorización Descuento Seguro Oncológico</td>
+                            <td class="rowBorderTableStyle rowBorderBottom"><a href="../files_out/14_Autorizacion_Descuento_Seguro_Oncologico_hoja5.docx" target="_blank"><img class="styleDescargaImg" src="../assets/descarga.jpg" alt=""></a></td>
+                            <td class="rowBorderTableStyle rowBorderBottom">
+                              <form id="form14" action="/sync/cargarDocumentacion14?codeDoc=14_documento14" enctype="multipart/form-data" method="post" >
+                                <label class="lblImg" for="file_inDoc14"><img  class="styleCargaDoc" src="../assets/carga.jpg" alt=""></label>
+                                <input style="display:none;" type="file"
+                                      id="file_inDoc14" name="file_inDoc14"
+                                      multiple="false"
+                                      accept=".doc,.docx,.csv,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel,application/pdf">
+                                <input id="btnGuardarDoc14" type="submit" style="display:none;">
+                              </form>    
+                            </td>
+                            <td class="rowBorderTableName rowBorderBottom">
+                              <% if (documentacionVM.lstUsuarioDocumentoNombres.length > 0) { %>  
+                                <% documentacionVM.lstUsuarioDocumentoNombres.forEach(function(doc) { %>   
+                                    <% if (doc.idDoc === 14) { %>  
+                                    <p id="cargaTextDesc14"><%= doc.nombre  %></p>
+                                    <% } else  { %>
+                                      <p id="cargaTextDesc14"></p>
+                                    <% } %>        
+                                <% }); %>
+                            <% } else  { %> 
+                              <p id="cargaTextDesc14"></p>
+                            <% } %>  
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="styleTableBorderBottom"><b class="numberTableStyle">5.</b></td>                        
+                            <td class="textRegular rowBorderBottom rowBorderRightStyle">Seguro Vida</td>
+                            <td class="rowBorderTableStyle rowBorderBottom"><a href="../files_out/15_Seguro_Vida.pdf" target="_blank"><img class="styleDescargaImg" src="../assets/descarga.jpg" alt=""></a></td>
+                            <td class="rowBorderTableStyle rowBorderBottom">
+                              <form id="form15" action="/sync/cargarDocumentacion15?codeDoc=15_documento15" enctype="multipart/form-data" method="post" >
+                                <label class="lblImg" for="file_inDoc15"><img  class="styleCargaDoc" src="../assets/carga.jpg" alt=""></label>
+                                <input style="display:none;" type="file"
+                                      id="file_inDoc15" name="file_inDoc15"
+                                      multiple="false"
+                                      accept=".doc,.docx,.csv,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel,application/pdf">
+                                <input id="btnGuardarDoc15" type="submit" style="display:none;">
+                              </form>    
+                            </td>
+                            <td class="rowBorderTableName rowBorderBottom">
+                              <% if (documentacionVM.lstUsuarioDocumentoNombres.length > 0) { %>  
+                                <% documentacionVM.lstUsuarioDocumentoNombres.forEach(function(doc) { %>   
+                                    <% if (doc.idDoc === 15) { %>  
+                                    <p id="cargaTextDesc15"><%= doc.nombre  %></p>
+                                    <% } else  { %>
+                                      <p id="cargaTextDesc15"></p>
+                                    <% } %>        
+                                <% }); %>
+                            <% } else  { %> 
+                              <p id="cargaTextDesc15"></p>
+                            <% } %>  
+                            </td>
+                          </tr>
+                          <tr>  
+                            <td class="styleTableBorderBottom"><b class="numberTableStyle">6.</b></td>                      
+                            <td class="textRegular rowBorderBottom rowBorderRightStyle">Inducción Formato Digital Bienestar Organizacional</td>
+                            <td class="rowBorderTableStyle rowBorderBottom"><a href="../files_out/16_Induccion_Formato_Digital_Bienestar_Organizacional.xlsx"><img class="styleDescargaImg" src="../assets/descarga.jpg" alt=""></a></td>
+                            <td class="rowBorderTableStyle rowBorderBottom">
+                              <form id="form16" action="/sync/cargarDocumentacion16?codeDoc=16_documento16" enctype="multipart/form-data" method="post" >
+                                <label class="lblImg" for="file_inDoc16"><img  class="styleCargaDoc" src="../assets/carga.jpg" alt=""></label>
+                                <input style="display:none;" type="file"
+                                      id="file_inDoc16" name="file_inDoc16"
+                                      multiple="false"
+                                      accept=".doc,.docx,.csv,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel,application/pdf">
+                                <input id="btnGuardarDoc16" type="submit" style="display:none;">
+                              </form>    
+                            </td>
+                            <td class="rowBorderTableName rowBorderBottom">
+                              <% if (documentacionVM.lstUsuarioDocumentoNombres.length > 0) { %>  
+                                <% documentacionVM.lstUsuarioDocumentoNombres.forEach(function(doc) { %>   
+                                    <% if (doc.idDoc === 16) { %>  
+                                    <p id="cargaTextDesc16"><%= doc.nombre  %></p>
+                                    <% } else  { %>
+                                      <p id="cargaTextDesc16"></p>
+                                    <% } %>        
+                                <% }); %>
+                            <% } else  { %> 
+                              <p id="cargaTextDesc16"></p>
+                            <% } %>  
+                            </td>
+                          </tr>
+                        </tbody>
+                       </table>
+                       <p class="textRegular pt-2">En caso de tener alguna consulta referida a 
+                        esta documentación, puedes comunicar con ADP o Bienestar Organizacional :</p>
+                        <ul class="ulStyle">
+                          <li class="textRegular liStyle">
+                            Jenny Mariño  - Bienestar Organizacional
+                          </li>
+                          <li class="pl-3">
+                            jmarinog@fmi.com - 959696769
+                          </li>
+                        </ul>
+
+                       
+                </div> 
+            <% } %>        
+          </main>
+  </div>    
+  <script src="https://vjs.zencdn.net/8.0.4/video.min.js"></script>
+  <script src="../js/documentacionScript.js"></script>
+</body>
+</html>

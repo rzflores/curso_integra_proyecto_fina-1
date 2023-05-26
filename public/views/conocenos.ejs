@@ -1,0 +1,355 @@
+ 
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Cv Inducción</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- videohjs-->
+    <link href="https://vjs.zencdn.net/8.0.4/video-js.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/conocenosStyles.css">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="shortcut icon" type="image/png" href="../assets/logocv.png">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+	<header>
+		  <nav class="menu-superior header-style">  
+            <div class="row">
+                <div class="col-6">
+                    <p class="text-white"> </p>
+                    <img class="img_logo" src="../assets/cv_logo.png"  >
+                </div>
+                <div class="col-6 procesoStyle">                   
+                    <h3 class="text-white styleValorAvance pr-3"><%= conocenosVM.usuario.valorAvance %>% </h3><h3 class="text-white styleTextValorAvance">proceso completado</h3>
+                </div>
+            </div> 
+            <ul>
+                <% conocenosVM.avanceSubMenus.forEach(function(p) { %>                                   
+                    <%if(conocenosVM.menuActual == p.idSubMenu){ %>
+                        <li id="btn_conocenos_page1" style="background-color:#c35a02;">
+                            <a  href="<%= p.link %>?MenuActual=<%=p.idSubMenu%>">
+                             <% p.nombre.split(",").forEach(e => {  %>                                        
+                                      <span> <%= e %><br> </span>
+                             <% }) %>
+                            </a>
+                        </li>
+                    <%}else {%> 
+                    <li id="btn_conocenos_page1" style="
+                        <% if (p.esVisitado) {%>                         
+                                background-color:#fd7e14;                        
+                        <%} else { %> 
+                            background-color:#acacab; 
+                        <%}%>">
+                            <a  href="<%= p.link %>?MenuActual=<%=p.idSubMenu%>">
+                             <% p.nombre.split(",").forEach(e => {  %>                                        
+                                      <span> <%= e %><br> </span>
+                             <% }) %>
+                        </a>
+                    </li>
+                    <%}%>                  
+                <% }); %>   
+            </ul>        
+        </nav>
+	</header>
+	
+	<div class="contenido">
+		<nav class="menu-lateral">
+			<ul>
+                <% conocenosVM.avanceMenus.forEach(function(p) { %>                                   
+                    <% if (p.idMenu == conocenosVM.menuLateral) { %>
+                        <li style="background-color:#c35a02;"> <a class="list-group-item list-group-item-action text-center list-group-item-light  p-4 nav-sidevar-style TextTileSidebar"                                            
+                            href="<%=p.link%>?idMenuLateral=<%=p.idMenu%>&idActualLateral=1"><%= p.nombre %></a></li>
+                            <%}else {%> 
+                            <li style="<% if (p.esVisitado) {%>                                          
+                                background-color:#fd7e14;                                         
+                            <%} else { %> 
+                                background-color:#acacab; 
+                            <%}%>"> <a class="list-group-item list-group-item-action text-center list-group-item-light  p-4 nav-sidevar-style TextTileSidebar"                           
+                             href="<%=p.link%>?idMenuLateral=<%=p.idMenu%>&idActualLateral=1"><%= p.nombre %></a></li>
+                    <% } %>   
+                <% }); %>   
+			</ul>
+            <div  class="side-navbar-footer">
+                <div class="container divSidebarStyle">                        
+                    <p class="textRegularSidebar"><b> Hola <%= conocenosVM.usuario.Nombres %> </b></p>
+                    <p class="textRegularSidebar">Revisa tus fechas <br>  de inducción</p>
+                    <p class="textRegularSidebar"><b class="textRegularSidebarNaranja">Inducción de Seguridad</b><br> <%= conocenosVM.usuario.induccionSeg %></p>
+                    <p class="textRegularSidebar"> <b class="textRegularSidebarNaranja">Inducción de RRHH</b> <br> <%= conocenosVM.usuario.induccionRH %></p>
+                    <p class="textRegularSidebar"><b class="textRegularSidebarNaranja">Fecha Límite para completar este proceso de incorporación</b><br> <%= conocenosVM.usuario.limiteFecha %></p>
+                </div>
+            </div>
+		</nav>
+		<main>
+			<% if (conocenosVM.divId == "CerroVerdeVirtual") { %>
+                <div class="styleCerroVerdeVirtual">                 
+                    <video
+                        id="myVideo1"
+                        class="video-js"
+                        controls
+                        preload="auto"                        
+                        height="500"                                                
+                        poster="../assets/poster_conocenos_1.jpg"
+                        data-setup="{}"
+                        >                        
+                        <source src="https://res.cloudinary.com/doqcuwx8q/video/upload/v1684896227/visita-virtual_ogqigk.mp4" type="video/mp4" />
+                                    <p class="vjs-no-js">
+                                    To view this video please enable JavaScript, and consider upgrading to a
+                                    web browser that
+                                    <a href="https://videojs.com/html5-video-support/" target="_blank"
+                                        >supports HTML5 video</a
+                                    >
+                                    </p>
+                    </video>                     
+                    <p class="subTextNaranjaVideo">Termina de ver el video para pasar a la siguiente sección.</p>
+                     <form class="d-none" method="post"  action="/habilitarSiguiente?menu=CerroVerdeVirtual&idMenu=4" >
+                         <input style="display: none;" id="btnHabilitarSiguienteCultura" type="submit">
+                     </form>   
+                </div>
+            <% } else if(conocenosVM.divId == "CulturaAltoRendimiento") { %>
+                 <div  class="container-fluid styleCulturaAltoRendimiento" >                        
+                    <a id="floatCultu" href="#scrollBotCult" class="float animate__animated animate__bounce animate__infinite"  data-toggle="tooltip" data-placement="top" title="Mas Información">
+                        <i class="fa-solid fa-arrow-down  my-float" ></i>
+                    </a>                       
+                        <div class="divContainerColum"> 
+                           <div class="divColum styleLine">
+                                <h3 class="subTexConocenos">Visión</h3>
+                                  <h3 class="subTexConocenosNegrita">
+                                      "Somos Líderes de  <br> Producción Segura <br> de cobre, haciendo <br> de cada día nuestro <br> mejor día"
+                                  </h3>  
+                                  <img src="../assets/visión_img.jpg" alt="">
+                            </div>
+                           <div style="padding-left: 2%;">
+                                <h3 class="subTexConocenos">Misión</h3>
+                                <ul class="ulStyle">
+                                    <li class="textRegular liStyle">Excelencia en Seguridad y Medio Ambiente: <br> <b>“Todos regresan a casa seguros todos los días”</b></li><br>
+                                    <li class="textRegular liStyle">Excelencia en la Personas:<br> <b>“Trabajando juntos para fortalecer nuestra <br> cultura de alto rendimiento”</b></li><br>
+                                    <li class="textRegular liStyle">Excelencia Operacional:<br> <b>“Lograr mejores eficiencias <br> operacionales cada día”</b></li><br>
+                                    <li class="textRegular liStyle">Gestión de Costos: <br><b>“Invirtiendo dinero sabiamente para <br> maximizar el beneficio”</b></li><br>
+                                    <li class="textRegular liStyle">Responsabilidad Social y con Grupos de Interés:<br> <b>“Mantener aceptación para <br> operar localmente”</b></li>
+                                </ul>
+                            </div> 
+                        </div>    
+                        <div class="row p-0 m-0">     
+                            <div class="col-4 pt-5">
+                                <h3 class="subTexConocenos">Freeport Edge</h3>
+                                <p class="textRegular">Es poner en práctica aquello que nos hace diferentes, únicos y sobre todo estar un paso adelante. Nos hace ser más competitivos, estar a la vanguardia y buscar siempre la mejora continua, llevando a la práctica los siguientes comportamientos que nos ayudarán a seguir siendo un equipo con una cultura de alto rendimiento. 
+                                </p>
+                            </div>
+                            <div style="display: flex;">                              
+                                        <img class="imgStyleConocenos" src="../assets/freeport_1.jpg" alt="">
+                                        <img class="imgStyleConocenos" src="../assets/freeport_2.jpg" alt="">
+                                        <img class="imgStyleConocenos" src="../assets/freeport_3.jpg" alt="">                               
+                            </div> 
+                            <div style="display: flex;justify-content: center;">                                  
+                              
+                                        <img class="imgStyleConocenos" src="../assets/freeport_4.jpg" alt="">
+                                        <img class="imgStyleConocenos" src="../assets/freeport_5.jpg" alt="">                                
+                            </div> 
+
+                            <h3 class="subTexConocenos">Cultura de Alto Rendimiento</h3>
+                            <div class="divContainerColum" style="padding-bottom: 4%;"> 
+                                <div class="divColum styleLine" id="scrollBotCult">
+                                    <h3 class="subTexConocenosNegrita">
+                                        "En Cerro Verde <br> somos un equipo <br> con una cultura <br>de Alto Rendimiento"
+                                    </h3>                                    
+                                </div>
+                                <div style="padding-left: 2%;">
+                                    <p class="textRegular">Esto significa tener nuestro <b>objetivos claros</b></p>
+                                    <h3 class="subTexConocenos">VISIÓN</h3>
+                                    <p class="textRegular">Saber <b>qué hacer</b> para alcanzarlos</p>
+                                    <h3 class="subTexConocenos">MISIÓN</h3>
+                                    <p class="textRegular">Hacerlo de una manera  <b>única y particular</b></p>
+                                    <h3 class="subTexConocenos">COMPORTAMIENTOS FREEPORT EDGE</h3>                                    
+                                </div>
+                            </div>      
+                            <div class="col-12 divVideo pt-5">
+                                <video
+                                    id="myVideo2"
+                                    class="video-js"
+                                    controls
+                                    preload="auto"                        
+                                    height="600px"                        
+                                    poster="../assets/poster_conocenos_2.jpg"
+                                    data-setup="{}"
+                                >                        
+                                    <source src="https://res.cloudinary.com/doqcuwx8q/video/upload/v1684896932/cultura-alto-rendimiento_ytfvrr.mp4" type="video/mp4" />
+                                    
+                                    <p class="vjs-no-js">
+                                    To view this video please enable JavaScript, and consider upgrading to a
+                                    web browser that
+                                    <a href="https://videojs.com/html5-video-support/" target="_blank"
+                                        >supports HTML5 video</a
+                                    >
+                                    </p>
+                                </video>
+                                <p class="subTextNaranjaVideo">Termina de ver el video para pasar a la siguiente sección.</p>
+                                <form class="d-none" method="post"  action="/habilitarSiguiente?menu=CulturaAltoRendimiento&idMenu=5" >
+                                    <input style="display: none" id="btnHabilitarSiguientePolitica" type="submit">
+                                </form> 
+                            </div>
+                        </div>
+                 </div>
+            <% } else if(conocenosVM.divId == "PoliticaAnticorrupcion") { %>
+                <div class="StylePoliticaAnticorrupcion" id="StylePoliticaAnticorrupcion">   
+                        <div style="display: flex;flex-direction: column ; align-items: center;">
+                         <p class="textRegular"> Política Anticorrupción Corporativa </p>                       
+                         <iframe src="../files_out/17_politica_anticorrupcion_corp.pdf" style="width:100%; height:500px;" frameborder="0" ></iframe>                                                   
+                        </div>  
+                        <p class="textRegular">Declaro que he leído, entendido y comprendido claramente y en su totalidad la Política Anticorrupción Corporativa y Política Anticorrupción de Sociedad Minera Cerro Verde SAA., al igual que, los alcances, responsabilidades y obligaciones contenidas en ambos documentos.</p>                        
+                         <% if (usuario.esAceptoPoli == 1) 
+                            {%>   
+                             <input class="form-check-input" type="checkbox" value="" id="checkAceptoPoli" checked>
+                            <% } else { %>
+                             <input class="form-check-input" type="checkbox" value="" id="checkAceptoPoli">                                        
+                            <%}%>                                  
+                         <label class="form-check-label" for="checkAceptoPoli">
+                            Si.
+                         </label>   
+                         <form id="frmHabilitarPolitica" class="d-none" method="post"  action="">
+                             <input style="display: none;" type="submit" id="btnHabilitarPolitica" />    
+                         </form>                  
+                         <div style="display: flex;flex-direction: column ; align-items: center;">
+                            <p class="textRegular"> Política Anticorrupción Cerro Verde </p>                       
+                            <iframe src="../files_out/18_politica_anticorrupcion_cv.pdf" style="width:100%; height:500px;" frameborder="0" ></iframe>                                                   
+                        </div>  
+                        <p class="textRegular">En ese sentido, de acuerdo a la posición que ocupo en Sociedad Minera Cerro Verde SAA., me comprometo a cumplir íntegramente con la Política Anticorrupción Corporativa y Política Anticorrupción de Sociedad Minera Cerro Verde SAA., así como aquellos lineamientos, reglas, procedimientos, y otras indicaciones que al respecto y con relación a ambas Políticas, ha emitido y pueda emitir Cerro Verde.</p>                        
+                         <% if (usuario.esAceptoPoli2 == 1) 
+                            {%>   
+                             <input class="form-check-input" type="checkbox" value="" id="checkAceptoPoli2" checked>
+                            <% } else { %>
+                             <input class="form-check-input" type="checkbox" value="" id="checkAceptoPoli2">                                        
+                            <%}%>                                  
+                         <label class="form-check-label" for="checkAceptoPoli">
+                            Sí, me comprometo.
+                         </label>  
+                         <form id="frmHabilitarPolitica2" class="d-none" method="post"  action="">
+                             <input style="display: none;" type="submit" id="btnHabilitarPolitica2" />    
+                         </form>      
+                         <div style="display: flex;flex-direction: column ; align-items: center;">
+                            <p class="textRegular"> Política de Privacidad de Cerro Verde </p>                       
+                            <iframe src="../files_out/19_politica_privacidad.pdf" style="width:100%; height:500px;" frameborder="0" ></iframe>                                                   
+                        </div>  
+                        <p class="textRegular">Declaro que he leído los alcances de la Política de Privacidad de Cerro Verde.</p>                        
+                         <% if (usuario.esAceptoPoli3 == 1) 
+                            {%>   
+                             <input class="form-check-input" type="checkbox" value="" id="checkAceptoPoli3" checked>
+                            <% } else { %>
+                             <input class="form-check-input" type="checkbox" value="" id="checkAceptoPoli3">                                        
+                            <%}%>                                  
+                         <label class="form-check-label" for="checkAceptoPoli">
+                            Sí, los he leído.
+                         </label>     
+                         <form id="frmHabilitarPolitica3" class="d-none" method="post"  action="">
+                             <input style="display: none;" type="submit" id="btnHabilitarPolitica3" />    
+                         </form> 
+                        
+                         <p class="subTextNaranjaVideo">Usted debe aceptar la Politica Anticorrupción para pasar a la siguiente sección.</p>
+                        
+                         
+                                                                            
+                </div>
+            <% } else  { %>    
+                 <div  class="container-fluid stylePoliticaInclusionDiversidad">
+                        <a id="floatInclu" href="#scrollBotInclu" class="float animate__animated animate__bounce animate__infinite"  data-toggle="tooltip" data-placement="top" title="Mas Información">
+                            <i class="fa-solid fa-arrow-down  my-float" ></i>
+                        </a>
+                        <p class="textRegular">La diversidad de culturas, puntos de vistas y experiencias de vida de nuestra gente constituyen la fortaleza de FCX.</p>
+                        <div class="divContainerColum">
+                              <div class="divColum">
+                                <p class="subTexInclusion"><img src="../assets/politica_loquehacemos.jpg" style="height: 30px;width: 30px;" alt=""> Lo que hacemos</p>
+                                <ul class="ulStyle">
+                                    <li class="textRegular liStyle">Tratar a los demás con respeto y ser amables con los demás y con aquellos con los que nos comunicamos.
+                                    </li><br>
+                                    <li class="textRegular liStyle">Buscar y tener en cuenta diversos puntos de vista y las contribuciones únicas de todas las personas con las que trabajamos</li>
+                                </ul>
+                              </div>  
+                              <div style="padding-left: 5%;">
+                                <p class="subTexInclusion"><img src="../assets/politica_loquenohacemos.jpg"  style="height: 30px;width: 30px;" alt=""> Lo que  no hacemos</p>  
+                                <ul class="ulStyle">
+                                <li class="textRegular liStyle">Permitir que las opiniones personales, culturales,<br> la apariencia o el estilo de vida de una persona<br> afecten nuestra capacidad para tomar decisiones.
+                                </li><br>
+                                <li class="textRegular liStyle">Mostrar favoritismo o prejuicio basándose en creencias personales.
+                                </li>
+                                </ul>
+                            </div>  
+                        </div>    
+                            <div style="padding-bottom: 3%;">
+                                <p class="textRegular">Como parte de Freeport-McMoRan, contamos con nuestra propia Política de Inclusión y Diversidad y se rige por los Principios de Conducta Empresarial que representan la cultura y compromiso de hacer lo que es correcto.</p>
+                            </div>
+                            <div class="col-12 pt-5 divVideo">
+                                <video
+                                    id="myVideo3"
+                                    class="video-js"
+                                    preload="auto"    
+                                    controls                    
+                                    height="600px"                        
+                                    poster="../assets/poster_conocenos_3.jpg"
+                                    data-setup='{}'
+                                >                        
+                                    <source src="https://res.cloudinary.com/doqcuwx8q/video/upload/v1684896855/inclusion-diversidad_awssge.mp4" type="video/mp4" />
+                                    
+                                    <p class="vjs-no-js">
+                                    To view this video please enable JavaScript, and consider upgrading to a
+                                    web browser that
+                                    <a href="https://videojs.com/html5-video-support/" target="_blank"
+                                        >supports HTML5 video</a
+                                    >
+                                    </p>
+                                </video>
+                                <p class="subTextNaranjaVideo">Termina de ver el video para pasar a la siguiente sección.</p>
+                                <form class="d-none" method="post"  action="/habilitarSiguiente?menu=PoliticaInclusionDiversidad&idMenu=6" >
+                                    <input style="display: none;" id="btnHabilitarDocumentos" type="submit">
+                                </form> 
+                            </div>
+                            <div id="scrollBotInclu" style="padding-top	: 5%;">
+                                <p class="textRegular">La empresa promueve un ambiente de trabajo positivo y productivo en el que se respeta y se valora a cada empleado. FCX no tolera ninguna forma de acoso ni discriminación. 
+                                </p>                                
+                            </div>
+                            <div class="divContainerColum">
+                                <div class="divColum">
+                                    <p class="subTexInclusion"><img src="../assets/politica_loquehacemos.jpg" style="height: 30px;width: 30px;" alt=""> Lo que hacemos</p>
+                                    <ul class="ulStyle">
+                                        <li class="textRegular liStyle">Pensar antes de actuar o hablar, reconociendo la manera en que los demás podrían recibir o malinterpretar las acciones y los comentarios.
+                                        </li><br>
+                                        <li class="textRegular liStyle">Actuar de una manera considerada, educada y apropiada.</li>
+                                    </ul>
+                                </div>  
+                                <div style="padding-left: 5%;">
+                                    <p class="subTexInclusion"><img src="../assets/politica_loquenohacemos.jpg" style="height: 30px;width: 30px;" alt=""> Lo que  no hacemos</p>  
+                                    <ul class="ulStyle">
+                                    <li class="textRegular liStyle">Hacer comentarios o gestos, o participar en comportamientos  violentos <br>  o amenazantes  que crean un ambiente de trabajo intimidante, hostil u ofensivo.
+                                    </li><br>
+                                    <li class="textRegular liStyle">Mostrar favoritismo o prejuicio basándose en creencias personales.
+                                    </li>
+                                    </ul> 
+                                </div>  
+                            </div>
+                            <div style="padding-top	: 5%;" >
+                                <h4 class="subTexConocenos">Sociedad Minera Cerro Verde S.A.A declara, a través de cuatro principios, su compromiso con el respeto a la inclusión y diversidad:</h4>
+                                <ol>
+                                    <li class="textRegular"><b>NO DISCRIMINAR:</b> Su compromiso respecto a la diversidad en cuanto a características como sexo, género o identidad de género, etnia, raza, nacionalidad, cultura, edad, estado civil, estado parental, afinidad política, religión u orientación sexual y todas aquellas otras que podrían propiciar la desigualdad dentro de la organización.
+                                    </li><br>
+                                    <li class="textRegular"><b>IGUALDAD DE TRATO:</b> Mantenemos una política activa de igualdad de oportunidades, retribuimos de manera equitativa y responsable a todos nuestros trabajadores y trabajadoras. Asimismo, en todas nuestras interacciones y comunicaciones utilizamos un lenguaje no sexista ni discriminatorio.
+                                    </li><br>
+                                    <li class="textRegular">
+                                        <b>AMBIENTE DE TRABAJO LIBRE DE ACOSO:</b>  Proporcionamos un ambiente de trabajo donde ningún tipo de acoso y/o conducta ofensiva, hostil o irrespetuosa es aceptado.
+                                    </li><br>
+                                    <li class="textRegular"><b>CONCILIACIÓN DE VIDA PERSONAL Y LABORAL:</b> Impulsamos medidas que favorezcan una equilibrada y armoniosa coexistencia de la vida laboral y personal de nuestros trabajadores.
+                                    </li><br>
+                                </ol>
+                            </div>
+                        </div>
+                 </div>                                                                    
+            <% } %> 
+		</main>
+	</div>    
+    <script src="https://vjs.zencdn.net/8.0.4/video.min.js"></script>
+    <script src="../js/conocenos.js"></script>
+</body>
+</html> 
+

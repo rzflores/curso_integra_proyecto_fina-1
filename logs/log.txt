@@ -1,0 +1,72 @@
+2023-02-19T04:14:26.748Z info: zip generado con existo.
+2023-02-19T04:14:28.496Z info: zip generado con existo.
+2023-02-19T04:16:22.401Z info: zip generado con existo.
+2023-02-19T04:26:40.075Z info: Success-log : zip generado con existo en C:\Users\Renzo\Desktop\ProyectoSistemaInduccion\SisInduccionCv\public\files_in\75832211\DAP_75832211.zip.
+2023-02-19T04:27:11.303Z info: Success-log : zip generado con existo en C:\Users\Renzo\Desktop\ProyectoSistemaInduccion\SisInduccionCv\public\files_in\75832211\DAP_75832211.zip.
+2023-02-19T04:27:13.419Z info: Success-log : zip generado con existo en C:\Users\Renzo\Desktop\ProyectoSistemaInduccion\SisInduccionCv\public\files_in\75832211\DAP_75832211.zip.
+2023-02-19T04:27:26.287Z info: Success-log : zip generado con existo en C:\Users\Renzo\Desktop\ProyectoSistemaInduccion\SisInduccionCv\public\files_in\75832211\DAP_75832211.zip.
+2023-02-19T04:29:45.158Z info: Success-log : zip generado con existo en C:\Users\Renzo\Desktop\ProyectoSistemaInduccion\SisInduccionCv\public\files_in\75832211\DAP_75832211.zip.
+2023-02-19T04:36:01.895Z info: Success-log : zip generado con existo en C:\Users\Renzo\Desktop\ProyectoSistemaInduccion\SisInduccionCv\public\files_in\75832211\DAP_75832211.zip.
+2023-02-19T04:36:02.471Z info: Success-log : finalizo la generacion de zip en  C:\Users\Renzo\Desktop\ProyectoSistemaInduccion\SisInduccionCv\public\files_in\75832211\DAP_75832211.zip.
+2023-02-19T04:36:23.159Z info: Success-log : zip generado con existo en C:\Users\Renzo\Desktop\ProyectoSistemaInduccion\SisInduccionCv\public\files_in\75832211\DAP_75832211.zip.
+2023-02-19T04:36:23.635Z info: Success-log : finalizo la generacion de zip en  C:\Users\Renzo\Desktop\ProyectoSistemaInduccion\SisInduccionCv\public\files_in\75832211\DAP_75832211.zip.
+2023-02-19T04:36:33.315Z info: Success-log : zip generado con existo en C:\Users\Renzo\Desktop\ProyectoSistemaInduccion\SisInduccionCv\public\files_in\75832211\DAP_75832211.zip.
+2023-02-19T04:36:33.617Z info: Success-log : finalizo la generacion de zip en  C:\Users\Renzo\Desktop\ProyectoSistemaInduccion\SisInduccionCv\public\files_in\75832211\DAP_75832211.zip.
+2023-02-19T04:37:13.131Z info: Success-log : zip generado con existo en C:\Users\Renzo\Desktop\ProyectoSistemaInduccion\SisInduccionCv\public\files_in\75832211\DAP_75832211.zip.
+2023-02-19T04:37:13.704Z info: Success-log : finalizo la generacion de zip en  C:\Users\Renzo\Desktop\ProyectoSistemaInduccion\SisInduccionCv\public\files_in\75832211\DAP_75832211.zip.
+2023-02-19T04:38:21.236Z info: Success-log : zip generado con existo en C:\Users\Renzo\Desktop\ProyectoSistemaInduccion\SisInduccionCv\public\files_in\75832211\DAP_75832211.zip.
+2023-02-19T04:38:41.602Z info: Success-log : zip generado con existo en C:\Users\Renzo\Desktop\ProyectoSistemaInduccion\SisInduccionCv\public\files_in\75832211\DAP_75832211.zip.
+2023-02-19T04:38:43.881Z info: Success-log : zip generado con existo en C:\Users\Renzo\Desktop\ProyectoSistemaInduccion\SisInduccionCv\public\files_in\75832211\DAP_75832211.zip.
+2023-02-19T04:38:45.822Z info: Success-log : zip generado con existo en C:\Users\Renzo\Desktop\ProyectoSistemaInduccion\SisInduccionCv\public\files_in\75832211\DAP_75832211.zip.
+2023-02-20T17:05:53.696Z info: Success-log : zip generado con existo en C:\Users\Renzo\Desktop\ProyectoSistemaInduccion\SisInduccionCv\public\files_in\75832211\DAP_75832211.zip.
+2023-02-20T17:05:55.680Z info: Success-log : zip generado con existo en C:\Users\Renzo\Desktop\ProyectoSistemaInduccion\SisInduccionCv\public\files_in\75832211\DBO_75832211.zip.
+2023-02-20T18:41:12.267Z info: Success-log : zip generado con existo en C:\Users\Renzo\Desktop\ProyectoSistemaInduccion\SisInduccionCv\public\files_in\75832211\DBO_75832211.zip.
+2023-02-20T18:41:12.486Z info: Success-log : finalizo la generacion de zip en  C:\Users\Renzo\Desktop\ProyectoSistemaInduccion\SisInduccionCv\public\files_in\75832211\DBO_75832211.zip.
+2023-02-20T18:47:40.821Z info: Success-log : zip generado con existo en C:\Users\Renzo\Desktop\ProyectoSistemaInduccion\SisInduccionCv\public\files_in\75832211\DBO_75832211.zip.
+2023-02-20T18:47:41.042Z info: Success-log : finalizo la generacion de zip en  C:\Users\Renzo\Desktop\ProyectoSistemaInduccion\SisInduccionCv\public\files_in\75832211\DBO_75832211.zip.
+2023-02-20T18:48:06.289Z info: Success-log : zip generado con existo en C:\Users\Renzo\Desktop\ProyectoSistemaInduccion\SisInduccionCv\public\files_in\75832211\DBO_75832211.zip.
+2023-02-20T18:48:06.479Z info: Success-log : finalizo la generacion de zip en  C:\Users\Renzo\Desktop\ProyectoSistemaInduccion\SisInduccionCv\public\files_in\75832211\DBO_75832211.zip.
+2023-02-20T18:48:28.908Z info: Success-log : zip generado con existo en C:\Users\Renzo\Desktop\ProyectoSistemaInduccion\SisInduccionCv\public\files_in\75832211\DBO_75832211.zip.
+2023-02-20T18:48:29.064Z info: Success-log : finalizo la generacion de zip en  C:\Users\Renzo\Desktop\ProyectoSistemaInduccion\SisInduccionCv\public\files_in\75832211\DBO_75832211.zip.
+2023-02-20T18:48:57.989Z info: Success-log : zip generado con existo en C:\Users\Renzo\Desktop\ProyectoSistemaInduccion\SisInduccionCv\public\files_in\75832211\DBO_75832211.zip.
+2023-02-20T18:48:58.163Z info: Success-log : finalizo la generacion de zip en  C:\Users\Renzo\Desktop\ProyectoSistemaInduccion\SisInduccionCv\public\files_in\75832211\DBO_75832211.zip.
+2023-02-20T18:50:26.586Z info: Success-log : zip generado con existo en C:\Users\Renzo\Desktop\ProyectoSistemaInduccion\SisInduccionCv\public\files_in\75832211\DBO_75832211.zip.
+2023-02-20T18:50:26.775Z info: Success-log : finalizo la generacion de zip en  C:\Users\Renzo\Desktop\ProyectoSistemaInduccion\SisInduccionCv\public\files_in\75832211\DBO_75832211.zip.
+2023-02-20T18:54:30.210Z info: Success-log : zip generado con existo en C:\Users\Renzo\Desktop\ProyectoSistemaInduccion\SisInduccionCv\public\files_in\75832211\DBO_75832211.zip.
+2023-02-20T19:01:14.127Z info: Success-log : zip generado con existo en C:\Users\Renzo\Desktop\ProyectoSistemaInduccion\SisInduccionCv\public\files_in\75832211\DAP_75832211.zip.
+2023-02-20T19:01:22.764Z info: Zip generado con exito-75832211
+2023-02-20T19:01:22.764Z info: Zip eliminado despues de descargarlo-75832211
+2023-02-20T19:02:34.118Z info: Zip generado con exito-75832211
+2023-02-20T19:02:34.119Z info: Zip eliminado despues de descargarlo-75832211
+2023-04-21T18:46:31.761Z info: Inicio-Info:Ingreso de administrador
+2023-04-21T22:00:06.337Z info: Inicio-Info:Ingreso de administrador
+2023-04-25T00:47:06.128Z info: Inicio-Info:Ingreso de administrador
+2023-04-25T00:50:47.465Z info: Inicio-Info:Ingreso de administrador
+2023-04-25T00:51:18.523Z info: Inicio-Info:Ingreso de administrador
+2023-04-25T00:55:39.206Z info: Inicio-Info:Ingreso de administrador
+2023-04-28T18:57:39.129Z info: Inicio-Info:Ingreso de administrador
+2023-04-28T19:12:44.968Z info: Inicio-Info:Ingreso de administrador
+2023-05-01T04:13:52.609Z info: Inicio-Info:Ingreso de administrador
+2023-05-01T04:17:15.055Z info: Inicio-Info:Ingreso de administrador
+2023-05-01T04:19:13.373Z info: Inicio-Info:Ingreso de administrador
+2023-05-01T04:20:10.540Z info: Inicio-Info:Ingreso de administrador
+2023-05-02T03:04:35.932Z info: Inicio-Info:Ingreso de administrador
+2023-05-24T00:25:10.879Z info: Inicio-Info:Ingreso de administrador
+2023-05-24T02:46:12.126Z info: Inicio-Info:Ingreso de administrador
+2023-05-24T03:04:09.123Z info: Inicio-Info:Ingreso de administrador
+2023-05-24T04:22:49.419Z info: Error-Inicio:TypeError: Cannot set properties of undefined (setting 'user')
+2023-05-24T04:23:34.269Z info: Error-Inicio:TypeError: Cannot set properties of undefined (setting 'user')
+2023-05-24T04:26:39.943Z info: Error-Inicio:TypeError: Cannot set properties of undefined (setting 'user')
+2023-05-24T04:28:53.721Z info: Error-Inicio:TypeError: Cannot set properties of undefined (setting 'user')
+2023-05-24T04:29:22.548Z info: Error-Inicio:TypeError: Cannot set properties of undefined (setting 'user')
+2023-05-24T04:30:09.860Z info: Inicio-Info:Ingreso de administrador
+2023-05-24T04:31:36.027Z info: Inicio-Info:Ingreso de administrador
+2023-05-24T04:35:40.965Z info: Inicio-Info:Ingreso de administrador
+2023-05-24T04:39:21.850Z info: Inicio-Info:Ingreso de administrador
+2023-05-24T04:39:54.035Z info: Inicio-Info:Ingreso de administrador
+2023-05-25T01:50:32.212Z info: Inicio-Info:Ingreso de administrador
+2023-05-25T01:50:53.479Z info: Inicio-Info:Ingreso de administrador
+2023-05-25T01:52:45.684Z info: Inicio-Info:Ingreso de administrador
+2023-05-25T01:54:36.305Z info: Inicio-Info:Ingreso de administrador
+2023-05-25T01:55:46.012Z info: Inicio-Info:Ingreso de administrador
+2023-05-25T02:33:14.797Z info: Inicio-Info:Ingreso de administrador

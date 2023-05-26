@@ -1,0 +1,109 @@
+@font-face {
+    font-family:GothamBold;
+    src: url('../font/Gotham-Bold.woff');
+   
+  }
+@font-face {
+    font-family: GothamBookRegular;
+    src: url('../font/Gotham-Book-Regular.woff');
+   
+}  
+@font-face {
+    font-family: GothamLight;
+    src:url('../font/Gotham-Light.woff');
+   
+  }
+:root{
+    --main-bg:#fd7e14;
+}
+
+.main-bg{
+    background-color: var(--main-bg) !important;
+}
+
+.margin-top-container{
+    margin-top: -12%;
+}
+
+.btn-bgc{
+    background-color: var(--main-bg) !important;
+}
+
+body{
+    margin: 0;
+    font-family: 'GothamBookRegular';
+}
+
+video{
+    position: fixed;
+    min-width: 100%;
+    min-height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+
+    z-index: -1;
+
+}
+
+
+.card-bgc{
+    Background-color: transparent;
+    border: transparent;
+}
+
+.text-color{
+    color: white;
+}
+
+.btn-text-color{
+    color: white;
+    font-weight:bold;    
+    
+}
+
+
+.btn-text-color:hover{
+    color: white;
+    font-weight:bold;
+    box-shadow: none;
+    
+}
+
+.label-style {
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 0.8em;
+    border-color: white;
+    box-shadow: none;    
+}
+
+.label-style:focus {
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 0.8em;
+    border-color: white;
+    
+    box-shadow: none;
+}
+
+
+.label-style:active {
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 0.8em;
+    border-color: white;
+    box-shadow: none;
+    
+}
+
+.text-title-login{
+    font-weight:bold;  
+}
+
+.subTexLogin{
+    color:  white; 
+    font-family: 'GothamBold';
+ }
+
+ .subTexLoginLight{
+    color:  white; 
+    font-family: 'GothamLight';
+ }

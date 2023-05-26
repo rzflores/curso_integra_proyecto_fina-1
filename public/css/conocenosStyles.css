@@ -1,0 +1,668 @@
+@font-face {
+    font-family:GothamBold;
+    src: url('../font/Gotham-Bold.woff');
+   
+  }
+@font-face {
+    font-family: GothamBookRegular;
+    src: url('../font/Gotham-Book-Regular.woff');
+   
+}  
+@font-face {
+    font-family: GothamLight;
+    src:url('../font/Gotham-Light.woff');
+   
+  }
+
+.vjs-default-skin {
+    z-index: -1;
+}
+
+
+body {
+	margin: 0;
+	padding: 0;
+    /* scrollbar-color: rgba(87, 81, 81, 0.5) rgba(222, 213, 213, 0); */
+}
+
+
+
+header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+    margin-top: -17px;
+	/* background-color: #333; */
+	color: #fff;
+    z-index: 1;	
+}
+
+
+.menu-superior ul {
+  margin: 0;
+  padding: 0;
+  width: 83%;
+  background-color: #fd7e14;
+  list-style: none;
+  position: relative;
+  left: 0;
+  margin-left: 17%; 
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center; 
+   
+}
+
+
+.menu-superior li {
+	display: block;	 
+    width: 100%;  
+    border: none;
+    background-color: #ccc;
+    text-align: center; 
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    border-right: white;
+    border-right-style: solid;
+    border-right-width: 1px;
+}
+
+
+
+.menu-superior li:last-child {
+	margin-right: 0;
+}
+
+.menu-superior a {
+	color: #fff;
+	text-decoration: none;
+}
+
+.contenido {
+	margin-top: 70px;
+	display: flex;
+}
+
+.menu-lateral {
+	background-color: #eee;
+	width: 230px;
+	height: calc(100vh - 174px);
+	position: fixed;
+	top: 174px;
+	left: 0;
+	overflow-y: auto;
+    z-index: 1;	
+	
+}
+
+.menu-lateral ul {
+    margin: 0;
+    padding: 0;    
+    background-color: #fd7e14;
+    list-style: none;                
+}
+
+.menu-lateral li {
+	display: block;	 
+    width: 100%;  
+    border: none;
+    background-color: #fd7e14;
+    text-align: center; 
+    padding-top: 1em;
+    padding-bottom: 1em;
+    border-bottom: white;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+}
+
+.menu-lateral a {
+	color: white;
+	text-decoration: none;
+}
+
+main {
+	margin-left: 220px;
+	padding: 10px;
+}
+
+/* FIN   */
+
+.form-check-input:checked{
+    accent-color: #fd7e14;
+    border: 0;
+ }
+
+
+
+
+* {
+    scroll-behavior: smooth;  
+    scrollbar-color: rgba(87, 81, 81, 0.5) rgba(222, 213, 213, 0);  
+}
+
+
+:root{
+    --main-bg:#fd7e14;
+}
+body{    
+    margin: 0;
+    font-family: 'GothamBookRegular';
+}
+
+
+.header-style{
+    background-image: url('../assets/cabecera.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 6%;    
+    top: 0; 
+
+}
+
+.img_logo{
+    width: 150px;
+    position: relative;
+    left: 2.5em;
+    top: 2.5em;
+}
+
+.side-navbar {
+    width: 24em;        
+    background-color: #F4F4F4;
+    color: white;
+    /* position: fixed; */
+}
+
+
+
+
+.initial-sidebar{
+    background-color: var(--main-bg) !important;
+ }
+
+ .nav-sidevar-style{
+     color: white;
+     font-family: 'GothamBookRegular';
+     font-weight: 500;
+ }
+
+ .side-navbar-footer{
+     padding-top: 20%;
+     padding-bottom: 100%;     
+     background-color: #F4F4F4;
+ }
+
+ .content-navbar-style{  
+    padding: 0px;  
+    position: relative;
+    top: -13%;
+    z-index: 99;
+ }
+
+
+ #page-content-wrapper{
+     width: 100%;
+ }
+
+
+.nav-item-style{
+    text-align: center;
+    width: 100%;
+    border-right: white;
+    border-right-style: solid;
+    border-right-width: 1px;
+    
+}
+
+ .nav-style{
+    width: 100%;
+     
+ }
+
+ .navbar-style{
+    color: white;
+    font-size: x-large;
+    background-color: #acacab;
+
+ }
+
+
+ .initial-navbar{
+    background-color: var(--main-bg) !important; 
+ }
+
+
+#myVideo2{
+    width: 82%;
+    
+}
+
+#myVideo3{
+    width: 79%;  
+}
+ 
+.video-js .vjs-big-play-button{
+    position: absolute;
+    top: 45%;
+    left: 45%;
+}
+
+.styleCerroVerdeVirtual{
+     width: 80%;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;    
+    padding-top: 15%;
+    padding-left: 15%;
+}
+.divContainerColum{
+    display: flex;
+    width: 100%;
+}
+
+.divContainerColum .divColum{
+    width: 50%;
+}
+
+.styleCulturaAltoRendimiento{
+    padding-left: 5%;
+    padding-top: 15%;
+   
+}
+
+.StylePoliticaAnticorrupcion{
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 10%;
+   
+}
+
+.stylePoliticaInclusionDiversidad{
+    margin-top: 15%;
+    padding-left: 2.5em;
+    padding-right: 2.5em;
+}
+
+.btnPlayText{
+    font-size: 1.8em;
+    font-weight: 2em;
+    /* font-style: bold; */
+    font-family: 'GothamBold';
+
+}
+
+.btnPlayText:focus {
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 0.8em;
+    border-color: white;
+    box-shadow: none;
+}
+
+
+.subTexConocenos{
+   color:  var(--main-bg) !important; 
+   font-family: 'GothamBold';
+}
+
+.subTexConocenosNegrita{
+    font-family: 'GothamBold';
+}
+
+.textRegular{
+    font-family: 'GothamBookRegular';   
+}
+
+.textRegularSidebar{
+    font-family: 'GothamBookRegular';   
+    color: black;
+}
+.textRegularSidebarNaranja{
+    font-family: 'GothamBookRegular';   
+    color:  var(--main-bg) !important; 
+    
+}
+
+.vjs-progress-control.vjs-control{
+    display: none;
+}
+
+.ulStyle {
+    list-style: none; /* Quitamos los marcadores */   
+    padding-left: 0px;     
+}
+
+.disabledControl{
+    display: hidden;
+}
+
+.liStyle::before {         
+    content: "\2022"; /* Insertamos el marcador */
+    color:  var(--main-bg) !important; 
+    padding-right: 4px;
+}
+
+.styleLine{
+    border-right: solid;
+    border-right-color: #abacab;
+    border-right-width: 0.1em;
+}
+
+.divVideo{
+    width: 85%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.imgStyleConocenos{
+    width: 19.2em;
+    height: 100%;
+}
+
+.subTexInclusion{
+    font-family: 'GothamBold';
+    color:  var(--main-bg) !important; 
+    font-size: 1.5em;
+}
+
+ol li {
+    list-style-type: none;
+    counter-increment: lista; /* Un nombre identificativo que te guste */
+    position: relative;
+   }
+
+
+ol li::before {
+    color:  var(--main-bg) !important; 
+    content: counter(lista) "."; /* Indica el separador para tu contenido */
+    left: -32px;
+    position: absolute;
+    text-align: right;
+    width: 26px;
+}
+
+
+.divSidebarStyle{
+    padding-left: 20%;
+    padding-bottom: 20px;
+}
+
+.TextTileSidebar{
+    font-family: 'GothamLight';
+    color: #F4F4F4;
+}
+
+.TextTileNavbar{
+    font-size: 25px;
+    font-family: 'GothamLight';
+    color: #F4F4F4;
+}
+
+
+.procesoStyle{
+    padding-top: 0.8em;
+    padding-right: 7em;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-content: center;
+}
+
+.styleValorAvance{
+    color:  var(--main-bg) !important;
+    font-family: 'GothamBold';
+    font-weight: 800;
+}
+
+
+.styleTextValorAvance{
+    font-family: 'GothamBold';
+    color: #F4F4F4;
+    font-size: 1.2em;
+}
+.subTextNaranjaVideo{
+    font-family: 'GothamBold';  
+    font-size: 1.1em; 
+    color:  var(--main-bg) !important; 
+
+}
+.float{
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:20px;
+	right:2px;
+	background-color:var(--main-bg) !important;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+	box-shadow: 2px 2px 3px #999;
+}
+
+.float:hover{
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:20px;
+	right:2px;
+	background-color:var(--main-bg) !important;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+	box-shadow: 2px 2px 3px #999;
+}
+
+.my-float{
+	margin-top:22px;
+}
+.my-float:hover{
+    color: white;
+}
+
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media  (min-width: 850px) {
+    .subTexConocenosNegrita{
+        font-family: 'GothamBold';
+        font-size: 1.8em ;
+    }
+    
+    .TextTileNavbar {
+        font-size: 18px;
+    } 
+    .navbarStyleVirtual{
+        position: relative;
+        top: -9%;
+        z-index: 99;
+    }
+    .navbarStyleCultura{
+        position: relative;
+        top: -2.4%;
+        z-index: 99;
+    }
+    .navbarStyleInclusion{
+        position: relative;
+        top: -2.6%;
+        z-index: 99;
+    }
+    .stylePoliticaInclusionDiversidad{
+        padding-top: 15%;
+    }
+
+    .styleCulturaAltoRendimiento{
+        margin-top: -5%;
+    }
+} 
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media  (min-width: 1000px) {
+    .img_logo{
+        width: 20%;
+    }
+
+    .TextTileNavbar {
+        font-size: 23px;
+    } 
+    .navbarStyleVirtual{
+        position: relative;
+        top: -10.5%;
+        z-index: 99;
+    }
+    .navbarStyleCultura{
+        position: relative;
+        top: -3.2%;
+        z-index: 99;
+    }
+    .navbarStyleInclusion{
+        position: relative;
+        top: -3.7%;
+        z-index: 99;
+    }
+
+    .stylePoliticaInclusionDiversidad{
+       padding-top: 15%;
+    }
+
+    .styleCulturaAltoRendimiento{
+        margin-top: -5%;
+    }
+   
+
+    
+
+    .navbar-expand-lg .navbar-nav .nav-link {
+        padding-right: .1rem;
+        padding-left: .1rem;
+      }
+      .navbar .navbar-expand-sm .navbar-expand-md .navbar-expand-lg .navbar-expand-xl  .content-navbar-style .wh-100{
+        padding-top: 20.6%;
+      }  
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media  (min-width: 1200px) {
+    .img_logo{
+        width: 20%;
+    }
+    .TextTileNavbar {
+        font-size: 23px;
+    } 
+    
+    .navbarStyleVirtual{
+        position: relative;
+        top: -21%;
+        z-index: 99;
+        width: 80%;
+        left: 22%;
+    }
+    .navbarStyleInclusion{
+        position: relative;
+        top: -4%;
+        z-index: 99;
+    }
+    
+
+    .styleCulturaAltoRendimiento{
+        margin-top: -5%;
+    }
+
+    .stylePoliticaInclusionDiversidad{
+        margin-top: -5%;
+    }
+}
+
+
+
+/* igual a 1400 o superior */
+@media  (min-width: 1400px) {
+    .navbarStyleVirtual{
+        position: relative;
+        top: -10%;
+        z-index: 99;
+    }
+    .navbarStyleCultura{
+        position: relative;
+        top: -3.8%;
+        z-index: 99;
+    }
+    .navbarStyleInclusion{
+        position: relative;
+        top: -4.8%;
+        z-index: 99;
+    }
+
+    .header-style{
+        background-image: url('../assets/cabecera.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 26%;
+    }
+    .img_logo{
+        width: 15%;
+    }
+    .styleCulturaAltoRendimiento{
+        margin-top: -3%;
+    }
+
+    .stylePoliticaInclusionDiversidad{
+        margin-top: -3%;
+    }
+    .menu-superior ul {
+        margin: 0;
+        padding: 0;
+        width: 90%;
+        background-color: #fd7e14;
+        list-style: none;
+        position: relative;
+        left: 0;
+        margin-left: 11%; 
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center; 
+         
+      }
+      .menu-lateral {
+        background-color: #eee;
+        width: 230px;
+        height: calc(100vh - 186px);
+        position: fixed;
+        top: 186px;
+        left: 0;
+        overflow-y: auto;
+        z-index: 1;	
+        
+    }
+
+    .styleCerroVerdeVirtual{
+       width: 90%;
+       padding: 0;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       flex-direction: column;    
+       padding-top: 20%;
+       padding-left: 50%;
+   }
+   .styleCulturaAltoRendimiento{
+    padding-left: 15%;
+    padding-top: 12%;
+    }
+    .stylePoliticaInclusionDiversidad{
+        padding-top: 12%;
+        padding-left: 2.5em;
+        padding-right: 2.5em;
+    }
+}
+
+
+
+
+
+
+

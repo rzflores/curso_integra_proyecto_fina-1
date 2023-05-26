@@ -1,0 +1,9 @@
+#*.mp4
+/node_modules
+#/public/assets/Cultura_Alto_Rendimiento.mp4
+#/public/assets/Inclusion_Diversidad.mp4
+#/public/assets/Visita_Virtual_Cerro_Verde.mp4
+/package-lock.json
+/public/files_in/
+/public/files_hoja/
+.vercel

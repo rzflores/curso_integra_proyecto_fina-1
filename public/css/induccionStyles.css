@@ -1,0 +1,332 @@
+@font-face {
+    font-family:GothamBold;
+    src: url('../font/Gotham-Bold.woff');
+   
+  }
+@font-face {
+    font-family: GothamBookRegular;
+    src: url('../font/Gotham-Book-Regular.woff');
+   
+}  
+@font-face {
+    font-family: GothamLight;
+    src:url('../font/Gotham-Light.woff');
+}
+.divContainerColum{
+    display: flex;
+    width: 100%;
+}
+
+.divContainerColum .divColum{
+    width: 50%;
+}
+    
+    
+
+    
+    
+    
+header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        margin-top: -17px;
+        background-color: #333;
+        color: #fff;
+        z-index: 1;	
+}
+    
+    
+.menu-superior ul {
+      margin: 0;
+      padding: 0;
+      width: 83%;
+      background-color: #fd7e14;
+      list-style: none;
+      position: relative;
+      left: 0;
+      margin-left: 17%; 
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center; 
+     
+}
+    
+.menu-superior li {
+        display: block;	 
+        width: 100%;  
+        border: none;
+        background-color: #ccc;
+        text-align: center; 
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
+        border-right: white;
+        border-right-style: solid;
+        border-right-width: 1px;
+}
+    
+.menu-superior a {
+        color: #fff;
+        text-decoration: none;
+}
+    
+.contenido {
+        margin-top: 70px;
+        display: flex;
+}
+
+.menu-lateral {
+    background-color: #eee;
+    width: 230px;
+    height: calc(100vh - 168px);
+	position: fixed;
+	top: 168px;
+    left: 0;
+    overflow-y: auto;
+    z-index: 1;	
+    
+}
+    
+.menu-lateral ul {
+        margin: 0;
+        padding: 0;    
+        background-color: #fd7e14;
+        list-style: none;                
+}
+    
+.menu-lateral li {
+        display: block;	 
+        width: 100%;  
+        border: none;
+        background-color: #fd7e14;
+        text-align: center; 
+        padding-top: 1em;
+        padding-bottom: 1em;
+        border-bottom: white;
+        border-bottom-style: solid;
+        border-bottom-width: 1px;
+}
+    
+.menu-lateral a {
+        color: white;
+        text-decoration: none;
+}
+    
+main {
+        margin-left: 220px;
+        padding: 10px;
+}
+    
+:root{
+    --main-bg:#fd7e14;
+}
+
+body{    
+    font-family: 'GothamBookRegular';
+}
+
+
+.header-style{
+    background-image: url('../assets/cabecera.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 35%;
+} 
+
+.img_logo{
+    width: 150px;
+    position: relative;
+    left: 2.5em;
+    top: 2.5em;
+}
+
+.induccion_1{
+    padding-top: 12%;
+    padding-left: 2.5em;
+    padding-right: 2.5em;
+}
+
+.induccion_2{
+    margin-top: 12%;
+    padding-top: 12%;
+    padding-left: 2.5em;
+    padding-right: 2.5em;
+}
+
+
+.objectPdf{
+    width: 900px;
+    height: 400px;
+}
+
+
+
+.side-navbar-footer{
+   
+    padding-top: 20%;
+    padding-bottom: 100%;     
+    background-color: #F4F4F4;
+}
+
+ .content-navbar-style{  
+    padding: 0;  
+    position: relative;
+    top: -9.3%;
+    z-index: 99;
+ }
+
+
+ #page-content-wrapper{
+     width: 100%;
+ }
+
+
+
+ .initial-navbar{
+    background-color: var(--main-bg) !important; 
+ }
+
+.video-js .vjs-big-play-button{
+    display: none;
+}
+
+
+.textRegular{
+    font-family: 'GothamBookRegular';   
+}
+.ulStyle {
+    list-style: none; /* Quitamos los marcadores */   
+    padding-left: 0px;     
+}
+
+
+.liStyle::before {         
+    content: "\2022"; /* Insertamos el marcador */
+    color:  var(--main-bg) !important; 
+    padding-right: 4px;
+}
+
+.subTextInduccion{
+    color:  var(--main-bg) !important; 
+    font-family: 'GothamBold';
+ }
+
+ .subTexInduccionVerde{
+    color: #00b42a;
+    font-family: 'GothamBold';
+ }
+
+ .styleLine{
+    border-right: solid;
+    border-right-color: #abacab;
+    border-right-width: 0.1em;
+}
+.divSidebarStyle{
+    padding-left: 20%;
+}
+
+.textRegularNaranja{
+    font-family: 'GothamBookRegular';   
+    color:  var(--main-bg) !important; 
+}
+
+
+.textRegularSidebar{
+    font-family: 'GothamBookRegular';   
+    color: black;
+}
+.textRegularSidebarNaranja{
+    font-family: 'GothamBookRegular';   
+    color:  var(--main-bg) !important; 
+    
+}
+
+
+.TextTileSidebar{
+    font-family: 'GothamBookRegular';
+    color: #F4F4F4;
+}
+
+.TextTileNavbar{
+    font-family: 'GothamLight';
+    color: #F4F4F4;
+}
+
+.procesoStyle{
+    padding-top: 2em;
+    padding-right: 7em;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-content: center;
+}
+
+.styleValorAvance{
+    color:  var(--main-bg) !important;
+    font-family: 'GothamBold';
+    font-weight: 800;
+}
+
+
+.styleTextValorAvance{
+    font-family: 'GothamBold';
+    color: #F4F4F4;
+}
+
+
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media  (min-width: 850px) {
+
+} 
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media  (min-width: 1000px) {
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media  (min-width: 1200px) {
+
+}
+
+
+
+/* igual a 1400 o superior */
+@media  (min-width: 1400px) { 
+    .menu-superior ul {
+        margin: 0;
+        padding: 0;
+        width: 90%;
+        background-color: #fd7e14;
+        list-style: none;
+        position: relative;
+        left: 0;
+        margin-left: 12%; 
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center; 
+         
+      }
+
+    .objectPdf{
+        width: 1550px;
+        height: 600px;
+    }
+
+    .induccion_1{
+        padding-top: 8%;
+        padding-left: 2.5em;
+        padding-right: 2.5em;
+    }
+    
+    .induccion_2{
+        padding-top: 8%;
+        padding-left: 2.5em;
+        padding-right: 2.5em;
+    }
+    
+}

@@ -1,0 +1,54 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <!-- Login CSS -->
+    <link rel="stylesheet" href="../css/loginStyles.css">
+    <link rel="shortcut icon" type="image/png" href="../assets/logocv.png">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <title>Cv Inducción</title>
+
+</head>
+<body>    
+    <video src="https://res.cloudinary.com/doqcuwx8q/video/upload/v1684897006/videoLogin_uqot22.mp4" autoplay loop>        
+    </video>
+    <section>
+        <input id="IdExitoLogin" style="display: none;" value="<%= exitoLogin %>">
+        <input id="IdDeshabilitado" style="display: none;" value="<%= deshabilitado %>">
+        <div class="d-flex justify-content-start">
+            <img class="p-5" src="../assets/cv_logo.png" width="20%" alt="">
+        </div>
+        <div class="d-flex align-items-center h-100">
+            <div class="container margin-top-container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-xl-10">
+                        <div class="card card-bgc">
+                            <h1 class="display-4 p-1 text-color text-center text-title-login subTexLogin">Cerro Verde te da la Bienvenida</h1>    
+                            <div class="card-body p-1 d-flex justify-content-center">
+                                <form action="/auth" method="post">
+                                    <div class="mb-4 pl-5 pr-5">
+                                        <label class="form-label text-color subTexLoginLight" for="numeroDocumento">DNI</label>
+                                        <input class="form-control label-style" type="text" name="numeroDocumento" autofocus>  
+                                    </div>
+                                    <div class="mb-4 pl-5 pr-5">
+                                        <label class="form-label text-color subTexLoginLight" for="contrasenia">Contraseña</label>
+                                        <input class="form-control label-style"  type="password" name="contrasenia">  
+                                    </div>
+                                    <div class="text-center">
+                                        <button class="btn btn-bgc btn-text-color p-0 pl-3 pr-3 subTexLogin" type="submit">Ingresar</button>
+                                    </div>
+                                </form>           
+                            </div> 
+                        </div>                                  
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+   
+    <script src="../js/login.js"></script>
+</body>
+</html>

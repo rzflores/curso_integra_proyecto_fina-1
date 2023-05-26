@@ -1,0 +1,131 @@
+<html lang="en">
+<head>
+    <title>Cv Inducción</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- videohjs-->
+    <link href="https://vjs.zencdn.net/8.0.4/video-js.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/induccionStyles.css">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="shortcut icon" type="image/png" href="../assets/logocv.png">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>    
+    <header>
+        <nav class="menu-superior header-style">  
+              <div class="row">
+                  <div class="col-6">
+                      <p class="text-white"> </p>
+                      <img class="img_logo" src="../assets/cv_logo.png"  >
+                  </div>
+                  <div class="col-6 procesoStyle">                   
+                      <h3 class="text-white styleValorAvance pr-3"><%= induccionesVM.usuario.valorAvance %>% </h3><h3 class="text-white styleTextValorAvance">proceso completado</h3>
+                  </div>
+              </div> 
+              <ul>
+                  <% induccionesVM.avanceSubMenus.forEach(function(p) { %>                                   
+                      <%if(induccionesVM.menuActual == p.idSubMenu){ %>
+                          <li style="background-color:#c35a02; height: 31px;">
+                              <a  href="<%= p.link %>?MenuActual=<%=p.idSubMenu%>">
+                               <% p.nombre.split(",").forEach(e => {  %>                                        
+                                        <span> <%= e %><br> </span>
+                               <% }) %>
+                              </a>
+                          </li>
+                      <%}else {%> 
+                      <li  style="<% if (p.esVisitado) {%>                         
+                                  background-color:#fd7e14;                        
+                          <%} else { %> 
+                              background-color:#acacab; 
+                          <%}%> height: 31px;">
+                              <a  href="<%= p.link %>?MenuActual=<%=p.idSubMenu%>">
+                               <% p.nombre.split(",").forEach(e => {  %>                                        
+                                        <span> <%= e %><br> </span>
+                               <% }) %>
+                          </a>
+                      </li>
+                      <%}%>                  
+                  <% }); %>   
+              </ul>        
+        </nav>
+      </header>
+
+      <div class="contenido">
+		<nav class="menu-lateral">
+			<ul>
+                <% induccionesVM.avanceMenus.forEach(function(p) { %>                                   
+                    <% if (p.idMenu == induccionesVM.menuLateral) { %>
+                        <li style="background-color:#c35a02;"> <a class="list-group-item list-group-item-action text-center list-group-item-light  p-4 nav-sidevar-style TextTileSidebar"                                            
+                            href="<%=p.link%>?idMenuLateral=<%=p.idMenu%>&idActualLateral=1"><%= p.nombre %></a></li>
+                       <%}else {%> 
+                       <li style="<% if (p.esVisitado) {%>                                          
+                        background-color:#fd7e14;                                         
+                     <%} else { %> 
+                        background-color:#acacab;
+                     <%}%>"> <a class="list-group-item list-group-item-action text-center list-group-item-light  p-4 nav-sidevar-style TextTileSidebar"                         
+                        href="<%=p.link%>?idMenuLateral=<%=p.idMenu%>&idActualLateral=1"><%= p.nombre %></a></li>
+                    <% } %>   
+                <% }); %>   
+			</ul>
+            <div  class="side-navbar-footer">
+                <div class="container divSidebarStyle">                        
+                    <p class="textRegularSidebar"><b> Hola <%= induccionesVM.usuario.Nombres %> </b></p>
+                    <p class="textRegularSidebar">Revisa tus fechas <br>  de inducción</p>
+                    <p class="textRegularSidebar"><b class="textRegularSidebarNaranja">Inducción de Seguridad</b><br> <%= induccionesVM.usuario.induccionSeg %></p>
+                    <p class="textRegularSidebar"> <b class="textRegularSidebarNaranja">Inducción de RRHH</b> <br> <%= induccionesVM.usuario.induccionRH %></p>
+                    <p class="textRegularSidebar"><b class="textRegularSidebarNaranja">Fecha Límite para completar este proceso de incorporación</b><br> <%= induccionesVM.usuario.limiteFecha %></p>
+                </div>
+            </div>
+		</nav>
+		<main>
+            <% if (induccionesVM.divId == "induccion_1") { %>
+                <div  class="induccion_1">                    
+                   <h1 class="subTexInduccionVerde">Inducción de Seguridad</h1>
+                   <ul class="ulStyle">
+                    <li class="textRegular liStyle">La hora de ingreso es exacta para ambos días, en caso llegues tarde no podrás 
+                        ingresar a la charla y deberás comunicarte con nosotros a la brevedad posible 
+                        para una reprogramación.</li>    
+                    <li class="textRegular liStyle">Deberás portar DNI, llevar lapicero y block de notas para tomar apuntes.<b>Al final 
+                        de la charla rendirás una evaluación calificada.</b>En caso de que no obtengas 
+                        nota aprobatoria, por favor comunícate inmediatamente con nosotros. Ten en 
+                        consideración que el almuerzo no está incluido.</li>
+                    </ul>
+                
+                    <h1 class="subTextInduccion">Inducción de Recursos Humanos</h1>    
+                    <div class="divContainerColum">
+                        <div class="divColum styleLine">
+                            <p class="textRegular">
+                                En tu hoja de ruta te indicaremos la hora,<br>fecha y el lugar donde llevarás esta<br> inducción.
+                            </p>
+
+                        </div>
+                        <div>
+                            <p class="textRegularNaranja" style="padding-left: 10%;">
+                                <b> Adicional,recibirás un correo electrónico <br> con el enlace para ingresar</b>
+                            </p>
+                            
+                        </div>
+                    </div>
+                </div>
+            <% } else  { %>    
+                <div  class="induccion_2" >                                            
+                   <h1 class="subTextInduccion">Descargar Hoja de Ruta</h1>
+                   <% if ( induccionesVM.usuario.nombreHojaRuta !=  null ) { %>
+                    <object class="objectPdf" type="application/pdf" data="../files_hoja/<%=usuario.nombreHojaRuta%>"></object>
+                    <% } else  { %> 
+                        <p class="textRegular">
+                            Pendiente de carga.
+                        </p>
+                    <% } %>      
+                </div> 
+        <% } %>        
+        </main>
+  </div>    
+  <script src="https://vjs.zencdn.net/8.0.4/video.min.js"></script>
+  <script src="../js/induccionScript.js"></script>
+</body>
+</html>

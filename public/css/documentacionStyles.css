@@ -1,0 +1,588 @@
+* {
+    scroll-behavior: smooth;
+}
+@font-face {
+    font-family:GothamBold;
+    src: url('../font/Gotham-Bold.woff');
+   
+  }
+@font-face {
+    font-family: GothamBookRegular;
+    src: url('../font/Gotham-Book-Regular.woff');
+   
+}  
+@font-face {
+    font-family: GothamLight;
+    src:url('../font/Gotham-Light.woff');
+   
+  }
+:root{
+    --main-bg:#fd7e14;
+}
+body{    
+    margin: 0;
+    font-family: 'GothamBookRegular';
+}
+.documentacion {
+    padding-top: 12%;
+    padding-left: 2.5em;
+    padding-right: 2.5em;
+}
+.documentacion_2{
+    padding-top: 12%;
+    padding-left: 4em;
+    padding-right: 2.5em;
+}
+
+.vjs-default-skin {
+    z-index: -1;
+}
+
+
+body {
+	margin: 0;
+	padding: 0;
+    scrollbar-color: rgba(87, 81, 81, 0.5) rgba(222, 213, 213, 0);
+}
+
+
+
+header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	background-color: #333;
+	color: #fff;
+    z-index: 1;	
+}
+
+
+.menu-superior ul {
+  margin: 0;
+  padding: 0;
+  width: 83%;
+  background-color: #fd7e14;
+  list-style: none;
+  position: relative;
+  left: 0;
+  margin-left: 17%; 
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center; 
+   
+}
+
+.menu-superior li {
+	display: block;	 
+    width: 100%;  
+    border: none;
+    background-color: #ccc;
+    text-align: center; 
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    border-right: white;
+    border-right-style: solid;
+    border-right-width: 1px;
+}
+
+
+
+.menu-superior li:last-child {
+	margin-right: 0;
+}
+
+.menu-superior a {
+	color: #fff;
+	text-decoration: none;
+}
+
+.contenido {
+	margin-top: 70px;
+	display: flex;
+}
+
+.menu-lateral {
+	background-color: #eee;
+	width: 230px;
+	height: calc(100vh - 185px);
+	position: fixed;
+	top: 185px;
+	left: 0;
+	overflow-y: auto;
+    z-index: 1;	
+	
+}
+
+.menu-lateral ul {
+    margin: 0;
+    padding: 0;    
+    background-color: #fd7e14;
+    list-style: none;                
+}
+
+.menu-lateral li {
+	display: block;	 
+    width: 100%;  
+    border: none;
+    background-color: #fd7e14;
+    text-align: center; 
+    padding-top: 1em;
+    padding-bottom: 1em;
+    border-bottom: white;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+}
+
+.menu-lateral a {
+	color: white;
+	text-decoration: none;
+}
+
+main {
+	margin-left: 220px;
+	padding: 10px;
+}
+
+/* FIN   */
+
+.styleCargaDoc{
+
+    width: 3em;
+    height: 3em;
+}
+
+
+.styleDescargaImg{
+    padding-left: 12px;
+    width: 3em;
+    height: 3em;
+}
+
+.header-style{
+    background-image: url('../assets/cabecera.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 35%;
+}
+
+.img_logo{
+    width: 150px;
+    position: relative;
+    left: 2.5em;
+    top: 2.5em;
+}
+
+.side-navbar {
+    width: 24em;        
+    background-color: #F4F4F4;
+    color: white;
+}
+
+/* .list-group-item-light.list-group-item-action:focus, .list-group-item-light.list-group-item-action:hover {
+    color: white; 
+    background-color: #acacab;
+} */
+
+ .initial-sidebar{
+    background-color: var(--main-bg) !important;
+ }
+ /* .initial-sidebar:hover{
+    color:  white;
+    background-color: var(--main-bg) !important;
+ } */
+
+ .nav-sidevar-style{
+     color: white;
+     font-family: 'GothamBookRegular';
+     font-weight: 500;
+    /* background-color: #acacab;
+    border-bottom: white;
+    border-bottom-style: solid ;
+    border-bottom-width: 1px; */
+ }
+
+
+
+ .nav-sidevar-style:hover{
+    color: white;
+    font-family: 'GothamBookRegular';
+    font-weight: 500;
+    /* background-color: #acacab;
+    border-bottom: white;
+    border-bottom-style: solid ;
+    border-bottom-width: 1px;  */
+}
+
+
+
+.side-navbar-footer{
+   
+    padding-top: 20%;
+    padding-bottom: 100%;     
+    background-color: #F4F4F4;
+}
+
+ .content-navbar-style{  
+    padding: 0;  
+    position: relative;
+    top: -3.3%;
+    z-index: 99;
+ }
+
+
+ #page-content-wrapper{
+     width: 100%;
+ }
+
+
+.nav-item-style{
+    text-align: center;
+    width: 100%;
+    border-right: white;
+    border-right-style: solid;
+    border-right-width: 1px;
+    background: #fd7e14;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+ .nav-style{
+    width: 100%;
+     
+ }
+
+ .navbar-style{
+                
+    color: white;
+    font-size: x-large;
+    background-color: #acacab;
+
+ }
+
+ .navbar-style:hover{
+    color: white;
+ }
+
+
+ .initial-navbar{
+    background-color: var(--main-bg) !important; 
+ }
+
+.video-js .vjs-big-play-button{
+    display: none;
+}
+.vjs-icon-placeholder {
+
+    display: none;
+}
+.vjs-control-text{
+    display: none;
+}
+
+.styleCerroVerdeVirtual{
+     width: 80%;
+    /* margin: 0 !important; */
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.styleCulturaAltoRendimiento{
+    margin-top: -8%;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+.stylePoliticaInclusionDiversidad{
+    margin-top: -2%;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+
+.textRegular{
+    font-family: 'GothamBookRegular';   
+}
+
+.numberTableStyle {
+    color: var(--main-bg) !important;
+    padding-right: 1em;
+}
+.boderBottomTable{    
+    border-bottom-color: #acacab;
+    border-bottom-style: solid;
+    border-bottom-width: 0.01em;
+    
+}
+
+.textLight{
+    font-family: 'GothamLight';
+}
+
+.textTitleTableDescarga{
+    color: var(--main-bg) !important;    
+    display: flex;
+    justify-content: center;
+}
+
+.textTitleTableCarga{
+    color: #00b42a;    
+}
+
+
+.styleTableBorderTop{
+    border-top-style: hidden ;    
+}
+.styleTableBorderBottom{
+    border-bottom-style: hidden ;    
+}
+.rowBorderTableStyle{     
+    border-right-style: solid ;
+    border-right-width: 0.01em;
+    border-right-color: #acacab; 
+}
+
+.rowBorderLeftStyle{ 
+      
+    border-left-style: solid ;
+    border-left-width: 0.01em;
+    border-left-color: #acacab; 
+}
+
+.rowBorderRightStyle{ 
+    
+    border-right-style: solid ;
+    border-right-width: 0.01em;
+    border-right-color: #acacab; 
+}
+
+.rowBorderTableName{     
+    padding-left: 10em;
+    border-right-style: solid ;
+    border-right-width: 0.01em;
+    border-right-color: #acacab;    
+}
+
+.rowBorderTop{
+    border-top-style: solid ; 
+    border-top-width: 0.01em;
+    border-top-color: #acacab;
+}
+.rowBorderBottom{
+    border-bottom-style: solid ; 
+    border-bottom-width: 0.01em;
+    border-bottom-color: #acacab;
+}
+
+.subTexDocumentacion{
+    color:  var(--main-bg) !important; 
+    font-family: 'GothamBold';
+ }
+
+ .subTexDocumentacionNegrita{
+    color:  black; 
+    font-family: 'GothamBold';
+ }
+ .rowStyleBorderTop{
+    border-top-style: solid ; 
+    border-top-width: 0.01em;
+    border-top-color: #acacab;
+ }
+
+ .linkStyleDocumentacion{
+    color: var(--main-bg) !important;    
+    text-decoration: none;
+}
+
+.linkStyleDocumentacion:hover{
+    color: var(--main-bg) !important;    
+    text-decoration: none;
+}
+ 
+
+.divSidebarStyle{
+    padding-left: 20%;
+}
+
+.textRegularSidebar{
+    font-family: 'GothamBookRegular';   
+    color: black;
+}
+.textRegularSidebarNaranja{
+    font-family: 'GothamBookRegular';   
+    color:  var(--main-bg) !important; 
+    
+}
+
+.TextTileSidebar{
+    font-family: 'GothamBookRegular';
+    color: #F4F4F4;
+}
+
+.TextTileNavbar{
+    font-family: 'GothamLight';
+    color: #F4F4F4;
+}
+
+.procesoStyle{
+    padding-top: 2em;
+    padding-right: 7em;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-content: center;
+}
+
+.styleValorAvance{
+    color:  var(--main-bg) !important;
+    font-family: 'GothamBold';
+    font-weight: 800;
+}
+
+
+.styleTextValorAvance{
+    font-family: 'GothamBold';
+    color: #F4F4F4;
+}
+
+
+
+
+.styleCargaDoc:hover{
+    cursor: pointer;
+}
+
+.ulStyle {
+    list-style: none; /* Quitamos los marcadores */   
+    padding-left: 0px;     
+}
+
+
+.liStyle::before {         
+    content: "\2022"; /* Insertamos el marcador */
+    color:  var(--main-bg) !important; 
+    padding-right: 4px;
+}
+
+
+.float{
+    z-index: 99999;
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:50px;
+	right:2px;
+	background-color:var(--main-bg) !important;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+	box-shadow: 2px 2px 3px #999;
+}
+
+.float:hover{
+    z-index: 99999;
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:40px;
+	right:2px;
+	background-color:var(--main-bg) !important;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+	box-shadow: 2px 2px 3px #999;
+}
+.my-float{
+	margin-top:22px;
+}
+.my-float:hover{
+	
+    color: white;
+}
+
+
+
+
+
+.documentacion_coordenadas {
+    padding-left: 2.5em;
+    padding-right: 2.5em;
+}
+
+.imgCoordenada{
+    width: 100%;
+}
+
+
+
+
+.textOverflow{
+    overflow: ellipsis;
+}
+
+
+.loader{
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background: url('../assets/loader.gif') 50% 50% no-repeat rgb(249,249,249);
+    opacity: 0.8;
+}
+
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media  (min-width: 850px) {
+
+} 
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media  (min-width: 1000px) {
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media  (min-width: 1200px) {
+
+}
+
+
+
+/* igual a 1400 o superior */
+@media  (min-width: 1400px) { 
+    .menu-superior ul {
+        margin: 0;
+        padding: 0;
+        width: 90%;
+        background-color: #fd7e14;
+        list-style: none;
+        position: relative;
+        left: 0;
+        margin-left: 12%; 
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center; 
+         
+      }
+    .documentacion {
+        padding-top: 10%;
+        padding-left: 15%;
+        
+    }
+    .documentacion_2{
+        width: 100%;   
+        padding-top: 14%;
+        padding-left: 30%;
+    }
+    .documentacion_coordenadas {
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+}
