@@ -256,7 +256,7 @@ const getDocumentacion1 = async (req  , res ) => {
         let lstAvanceSubMenus = await UsuarioAvanceService.obtenerSubMenusAvance(usuario.idUsuario , 2)
         lstUsuarioDocumentosNombres   =await UsuarioDocumentoService.obtenerUsuarioDocumentosNombres(usuario.idUsuario);  
         
-        let documentacionVM = new DocumentacionVM( usuario  , lstAvanceMenus ,lstAvanceSubMenus, "documentacion_1" ,lstUsuarioDocumentosNombres , idMenu , 2 )
+        let documentacionVM = new DocumentacionVM( usuario  , lstAvanceMenus ,lstAvanceSubMenus,lstUsuarioDocumentosNombres ,  "documentacion_1" , idMenu , 2 )
         res.render( 'documentacion.ejs', { documentacionVM : documentacionVM } )
         
     } catch (error) {

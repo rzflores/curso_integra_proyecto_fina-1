@@ -56,24 +56,24 @@ class UsuarioAvanceService{
         try {
              
             let result  = await  UsuarioAvance.actualizarValorAvance(idUsuario);
-            console.log(result)
-            if(result == false) { throw new Error()}
+            if(result == false) { throw new Error("Error a actualizar valor de avance | result:"+ result )}
             
-            let objValorAvanceDTO = await UsuarioAvance.obtenerValorAvance();
-            if(objValorAvanceDTO == undefined){throw new Error()}
+            let objValorAvanceDTO = await UsuarioAvance.obtenerValorAvance(idUsuario);
+            if(objValorAvanceDTO == undefined){throw new Error("Error a obtener valor de avance | result:"+ objValorAvanceDTO)}
 
             if(objValorAvanceDTO.valorAvance  >= 50 &&  objValorAvanceDTO.envioMitad == false){
                  //await envioMitad( correElectronico, correoAdmin , nombres,apellidos,numeroDoc )
-                 await Usuario.ActualizarEnvioMitad(idUsuario)
+                 result = await Usuario.ActualizarEnvioMitad(idUsuario)
+                 if(result == false) { throw new Error("Error a actualizar envio mitad | result:"+ result)}
             }
 
             if(objValorAvanceDTO.valorAvance  >= 100 &&  objValorAvanceDTO.envioFinal == false){
 
                  //await envioFinal( correElectronico, correoAdmin , nombres,apellidos,numeroDoc )
                  result = await Usuario.ActualizarEnvioFinal(idUsuario)
-                 if(result == false) { throw new Error()}
+                 if(result == false) { throw new Error("Error a actualizar envio final | result:"+ result)}
                  result = await Usuario.ActualizarFinInduccion(idUsuario);
-                 if(result == false) { throw new Error()}
+                 if(result == false) { throw new Error("Error a actualizar fin induccion | result:"+ result)}
             } 
 
             

@@ -1,6 +1,7 @@
 const pool = require('../database/config')
 const MenuAvanceDTO = require('../DTO/MenuAvanceDTO')
 const SubMenuAvanceDTO = require('../DTO/SubMenuAvanceDTO')
+const ValorAvanceDTO = require('../DTO/ValorAvanceDTO')
 
 
 

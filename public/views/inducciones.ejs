@@ -115,7 +115,7 @@
                 <div  class="induccion_2" >                                            
                    <h1 class="subTextInduccion">Descargar Hoja de Ruta</h1>
                    <% if ( induccionesVM.usuario.nombreHojaRuta !=  null ) { %>
-                    <object class="objectPdf" type="application/pdf" data="../files_hoja/<%=usuario.nombreHojaRuta%>"></object>
+                    <object class="objectPdf" type="application/pdf" data="../files_hoja/<%=induccionesVM.usuario.nombreHojaRuta%>"></object>
                     <% } else  { %> 
                         <p class="textRegular">
                             Pendiente de carga.

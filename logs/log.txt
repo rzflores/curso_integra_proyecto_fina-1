@@ -70,3 +70,7 @@
 2023-05-25T01:54:36.305Z info: Inicio-Info:Ingreso de administrador
 2023-05-25T01:55:46.012Z info: Inicio-Info:Ingreso de administrador
 2023-05-25T02:33:14.797Z info: Inicio-Info:Ingreso de administrador
+2023-05-26T19:15:15.945Z info: Zip generado con exito-11887733
+2023-05-26T19:15:15.947Z info: Zip eliminado despues de descargarlo-11887733
+2023-05-26T19:15:26.765Z info: Zip generado con exito-11887733
+2023-05-26T19:15:26.766Z info: Zip eliminado despues de descargarlo-11887733
